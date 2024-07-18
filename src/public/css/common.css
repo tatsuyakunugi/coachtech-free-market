@@ -1,0 +1,55 @@
+.header {
+    background: #000;
+}
+  
+.header__inner {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1230px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.search-form input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login-link,
+.register-link,
+.mypage-link {
+    font-weight: bold;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-form__button-submit {
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.sell-form__button-submit {
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
