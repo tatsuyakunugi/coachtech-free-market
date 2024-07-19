@@ -1,0 +1,43 @@
+.item__content {
+    max-width: 1230px;
+    margin: 30px auto;
+}
+
+.item__content--inner {
+    display: flex;
+}
+
+.item__image,
+.item__body {
+    width: 50%;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+.item__image-card {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #ddd;
+}
+
+.item__body--inner {
+    width: 100%;
+}
+
+.purchase__link-form {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #ff0000;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.purchase__link {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

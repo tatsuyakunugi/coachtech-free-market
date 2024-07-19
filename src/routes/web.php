@@ -14,4 +14,4 @@ use App\Http\Controllers\ItemController;
 |
 */
 
-Route::get('/', [ItemController::class, 'index']);
+Route::get('/profile', [ItemController::class, 'profile']);

@@ -1,0 +1,17 @@
+.main__content--heading {
+    display: flex;
+    justify-content: left;
+    padding: 30px 30px 0px 30px;
+    border-bottom: 3px solid #ddd;
+}
+
+.main__content--body {
+    max-width: 1230px;
+    padding: 30px;
+}
+
+.item-card {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ddd;
+}
