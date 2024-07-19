@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function profile()
     {
-        return view('index');
+        return view('profile');
     }
 }
