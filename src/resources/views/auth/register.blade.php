@@ -19,7 +19,7 @@
             <div class="register-form__heading">
                 <p>会員登録</p>
             </div>
-            <form class="register-form" action="" method="post">
+            <form class="register-form" action="/register" method="post">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -31,7 +31,9 @@
                         </div>
                     </div>
                     <div class="form__error">
-                        <!--ここにバリデーション-->
+                        <p class="form__error-message">
+                            <!--バリデーション-->
+                        </p>
                     </div>
                 </div>
                 <div class="form__group">
@@ -44,7 +46,9 @@
                         </div>
                     </div>
                     <div class="form__error">
-                        <!--ここにバリデーション-->
+                        <p class="form__error-message">
+                            <!--バリエーション-->
+                        </p>
                     </div>
                 </div>
                 <div class="form__button">
