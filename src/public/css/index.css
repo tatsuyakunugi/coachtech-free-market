@@ -10,6 +10,12 @@
     padding: 30px;
 }
 
+.item__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .item-card {
     width: 200px;
     height: 200px;

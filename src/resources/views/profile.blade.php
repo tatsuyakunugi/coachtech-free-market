@@ -30,7 +30,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="" name="">
+                    <input type="text" name="user_name">
                 </div>
             </div>
             <div class="form__error">
@@ -43,7 +43,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--postcode">
-                    <input type="" name="">
+                    <input type="text" name="postcode">
                 </div>
             </div>
             <div class="form__error">
@@ -56,7 +56,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--address">
-                    <input type="" name="">
+                    <input type="text" name="address">
                 </div>
             </div>
             <div class="form__error">

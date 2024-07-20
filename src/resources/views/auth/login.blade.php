@@ -19,7 +19,7 @@
             <div class="login-form__heading">
                 <p>ログイン</p>
             </div>
-            <form class="login-form" action="" method="post">
+            <form class="login-form" action="/login" method="post">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -31,7 +31,9 @@
                         </div>
                     </div>
                     <div class="form__error">
-                        <!--ここにバリデーション-->
+                        <p class="form__error-message">
+                            <!--バリエーション-->
+                        </p>
                     </div>
                 </div>
                 <div class="form__group">
@@ -44,7 +46,9 @@
                         </div>
                     </div>
                     <div class="form__error">
-                        <!--ここにバリデーション-->
+                        <p class="form__error-message">
+                            <!--バリエーション-->
+                        </p>
                     </div>
                 </div>
                 <div class="form__button">
