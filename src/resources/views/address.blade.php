@@ -25,7 +25,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--postcode">
-                            <input type="" name="">
+                            <input type="text" name="postcode">
                         </div>
                     </div>
                     <div class="form__error">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--address">
-                            <input type="" name="">
+                            <input type="text" name="address">
                         </div>
                     </div>
                     <div class="form__error">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--building">
-                            <input type="" name="">
+                            <input type="text" name="building">
                         </div>
                     </div>
                     <div class="form__error">
