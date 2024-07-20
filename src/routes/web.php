@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +16,11 @@ use App\Http\Controllers\ItemController;
 |
 */
 
-Route::get('/profile', [ItemController::class, 'profile']);
+Route::get('/', [ItemController::class, 'index']);
+
+Route::get('register', [RegisterController::class, 'getRegister']);
+Route::post('register', [RegisterController::class, 'postRegister']);
+
+Route::get('/login', [LoginController::class, 'getLogin']);
+Route::post('/login', [LoginController::class, 'postLogin']);
+Route::post('/logout', [LoginController::class, 'postLogout']);
