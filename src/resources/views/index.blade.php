@@ -15,7 +15,11 @@
         </div>
     </div>
     <div class="main__content--body">
-        <div class="item-card"></div>
+        <div class="item__wrapper">
+            <div class="item-card">
+                <a class="item__link" href="/item">商品画像</a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
