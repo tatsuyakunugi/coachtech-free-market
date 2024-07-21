@@ -13,7 +13,7 @@
                 <p>ユーザー名</p>
             </div>
             <div class="profile__link-form">
-                <a class="profile__link" href="/profile">プロフィールを編集</a>
+                <a class="profile__link" href="mypage/profile">プロフィールを編集</a>
             </div>
         </div>
         <div class="item__link">

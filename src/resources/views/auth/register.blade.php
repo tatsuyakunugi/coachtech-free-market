@@ -30,11 +30,13 @@
                             <input type="email" name="email">
                         </div>
                     </div>
+                    @error('email')
                     <div class="form__error">
                         <p class="form__error-message">
-                            <!--バリデーション-->
+                            {{ $errors->first('email') }}
                         </p>
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group">
                     <div class="form__group-title">
@@ -45,11 +47,13 @@
                             <input type="password" name="password">
                         </div>
                     </div>
+                    @error('password')
                     <div class="form__error">
                         <p class="form__error-message">
-                            <!--バリエーション-->
+                            {{ $errors->first('password') }}
                         </p>
                     </div>
+                    @enderror
                 </div>
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">登録する</button>

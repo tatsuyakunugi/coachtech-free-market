@@ -9,19 +9,17 @@
     <div class="profile__heading">
         <p>プロフィール設定</p>
     </div>
-    <form class="profile-form" action="" method="post">
+    @if(empty($profile))
+    <form class="profile-form" action="{{ route('profile_create') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label"></span>
+                <span class="form__label">新規</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--file">
-                    <input type="file" name="">
+                    <input type="file" name="image">
                 </div>
-            </div>
-            <div class="form__error">
-                <!--ここにバリデーション-->
             </div>
         </div>
         <div class="form__group">
@@ -30,12 +28,14 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="user_name">
+                    <input type="text" name="name">
                 </div>
             </div>
+            @error('name')
             <div class="form__error">
-                <!--ここにバリデーション-->
+                {{ $errors->first('name') }}
             </div>
+            @enderror
         </div>
         <div class="form__group">
             <div class="form__group-title">
@@ -43,12 +43,14 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--postcode">
-                    <input type="text" name="postcode">
+                    <input type="text" name="post_code">
                 </div>
             </div>
+            @error('post_code')
             <div class="form__error">
-                <!--ここにバリデーション-->
+                {{ $errors->first('post_code') }}
             </div>
+            @enderror
         </div>
         <div class="form__group">
             <div class="form__group-title">
@@ -59,9 +61,11 @@
                     <input type="text" name="address">
                 </div>
             </div>
+            @error('address')
             <div class="form__error">
-                <!--ここにバリデーション-->
+                {{ $errors->first('address') }}
             </div>
+            @enderror
         </div>
         <div class="form__group">
             <div class="form__group-title">
@@ -69,16 +73,87 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--building">
-                    <input type="" name="">
+                    <input type="text" name="building">
                 </div>
-            </div>
-            <div class="form__error">
-                <!--ここにバリデーション-->
             </div>
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">更新する</button>
         </div>
     </form>
+    @else
+    <form class="profile-form" action="{{ route('profile_update') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label">更新</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--file">
+                    <input type="file" name="image">
+                </div>
+            </div>
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label">ユーザー名</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--name">
+                    <input type="text" name="name">
+                </div>
+            </div>
+            @error('name')
+            <div class="form__error">
+                {{ $errors->first('name') }}
+            </div>
+            @enderror
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label">郵便番号</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--postcode">
+                    <input type="text" name="post_code">
+                </div>
+            </div>
+            @error('post_code')
+            <div class="form__error">
+                {{ $errors->first('post_code') }}
+            </div>
+            @enderror
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label">住所</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--address">
+                    <input type="text" name="address">
+                </div>
+            </div>
+            @error('address')
+            <div class="form__error">
+                {{ $errors->first('address') }}
+            </div>
+            @enderror
+        </div>
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label">建物名</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--building">
+                    <input type="text" name="building">
+                </div>
+            </div>
+        </div>
+        <div class="form__button">
+            <button class="form__button-submit" type="submit">更新する</button>
+        </div>
+    </form>
+    @endif
 </div>
 @endsection
