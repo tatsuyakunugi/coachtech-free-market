@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<div class="profile__alert">
+    @if (session('message'))
+    <div class="profile__alert--success">{{ session('message') }}</div>
+    @endif 
+</div>
 <div class="profile__content">
     <div class="profile__heading">
         <p>プロフィール設定</p>
@@ -78,7 +83,7 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">更新する</button>
+            <button class="form__button-submit" type="submit">作成する</button>
         </div>
     </form>
     @else
