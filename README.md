@@ -52,6 +52,8 @@ php.iniにmemory_limit = 100M、memory_limit = 100M、upload_max_filesize = 100M
 
 docker-compose up及びdocker-compose up -d
 
+6. php artisan storage:link
+
 ## その他
 
 ### テスト用ユーザー
