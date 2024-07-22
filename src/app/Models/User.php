@@ -41,8 +41,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function profiles()
+    public function profile()
     {
-        return $this->hasMany(Profile::class);
+        return $this->hasOne(Profile::class);
     }
 }
