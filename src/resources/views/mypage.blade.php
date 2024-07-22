@@ -8,10 +8,18 @@
 <div class="mypage__content">
     <div class="mypage__content--heading">
         <div class="user__info">
-            <div class="user-image"></div>
-            <div class="user-name">
-                <p>ユーザー名</p>
+            @if($profile)
+            <div class="user-image">
+                <img src="{{ Storage::url($user->profile->image_path) }}" alt="">
             </div>
+            <div class="user-name">
+                <p>{{ $user->profile->name }}さん</p>
+            </div>
+            @else
+            <div class="user-name">
+                <p>ゲストさん</p>
+            </div>
+            @endif
             <div class="profile__link-form">
                 <a class="profile__link" href="mypage/profile">プロフィールを編集</a>
             </div>
