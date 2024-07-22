@@ -14,13 +14,28 @@ class ProfileController extends Controller
     {
         $this->validate($request,[
             'name' => 'required',
-            'post_code' => 'required',
+            'post_code' => 'required|regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required',
         ]);
         
         $user = Auth::user();
-        $image = $request->file('image');
-        $image_path = $image->store('public/images');
+        $image_path = '';
+        $building = '';
+
+        if($request->image)
+        {
+            $image = $request->file('image');
+            $image_path = $image->store('public/images');
+        }else{
+            $image_pass = null;
+        }
+        
+        if($request->building)
+        {
+            $building = $request->input('building');
+        }else{
+            $building = null;
+        }
 
         $profile = new Profile([
             'user_id' => $user->id,
@@ -28,36 +43,52 @@ class ProfileController extends Controller
             'name' => $request->input('name'),
             'post_code' => $request->input('post_code'),
             'address' => $request->input('address'),
-            'building' => $request->input('building'),
+            'building' => $building,
         ]);
         
         $profile->save();
 
-        return redirect('profile');
+        return redirect('mypage/profile')->with('message', 'プロフィールを作成しました');
     }
 
     public function update(ProfileRequest $request)
     {
         $this->validate($request,[
             'name' => 'required',
-            'post_code' => 'required',
+            'post_code' => 'required|regex:/^[0-9]{3}-[0-9]{4}$/',
             'address' => 'required',
         ]);
 
         $user = Auth::user();
         $profile = Profile::where('user_id', $user->id)->first();
-        $image = $request->file('image');
-        $image_path = $image->store('public/images');
+        $image_path = '';
+        $building = '';
+
+        if($request->image)
+        {
+            $image = $request->file('image');
+            $image_path = $image->store('public/images');
+        }elseif($profile){
+            $image_path = $profile->image_path;
+        }else{
+            $image_pass = null;
+        }
+
+        if($request->building)
+        {
+            $building = $request->input('building');
+        }else{
+            $building = null;
+        }
 
         $profile->update([
-            'user_id' => $user->id,
             'image_path' => $image_path,
             'name' => $request->input('name'),
             'post_code' => $request->input('post_code'),
             'address' => $request->input('address'),
-            'building' => $request->input('building'),
+            'building' => $building,
         ]);
 
-        return redirect('profile');
+        return redirect('mypage/profile')->with('message', 'プロフィール情報を更新しました');
     }
 }
