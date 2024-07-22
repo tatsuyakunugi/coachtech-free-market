@@ -47,7 +47,9 @@
 4．php artisan key:generate
 
 5. default.confにclient_max_body_size 100M;、
+
 php.iniにmemory_limit = 100M、post_max_size = 100M、upload_max_filesize = 100Mを記述したのち、
+
 docker-compose build、docker-compose up -d
 
 ## その他
