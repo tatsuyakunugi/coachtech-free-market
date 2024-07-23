@@ -3,13 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
+    public function profile()
+    {
+        $user = Auth::user();
+        if(Profile::where('user_id', $user->id)->exists())
+        {
+            $profile = Profile::where('user_id', $user->id)->first();
+        }else{
+            $profile = null;
+        }
+
+        return view('profile', compact('user', 'profile'));
+    }
+    
     public function store(ProfileRequest $request)
     {
         $this->validate($request,[
@@ -22,10 +34,10 @@ class ProfileController extends Controller
         $image_path = '';
         $building = '';
 
-        if($request->image)
+        if($request->hasFile('image'))
         {
             $image = $request->file('image');
-            $image_path = $image->store('public/images');
+            $image_path = $image->store('public/profiles');
         }else{
             $image_pass = null;
         }
@@ -64,15 +76,17 @@ class ProfileController extends Controller
         $image_path = '';
         $building = '';
 
-        if($request->image)
+        if($request->hasFile('image'))
         {
             $image = $request->file('image');
-            $image_path = $image->store('public/images');
-        }elseif($profile){
+            $image_path = $image->store('public/profiles');
+        }elseif($profile->image_path == empty($request->hasFile('image'))){
             $image_path = $profile->image_path;
         }else{
             $image_pass = null;
         }
+
+
 
         if($request->building)
         {

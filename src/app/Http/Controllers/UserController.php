@@ -20,17 +20,4 @@ class UserController extends Controller
         }
         return view('mypage', compact('user', 'profile'));
     }
-
-    public function profile()
-    {
-        $user = Auth::user();
-        if(Profile::where('user_id', $user->id)->exists())
-        {
-            $profile = Profile::where('user_id', $user->id)->first();
-        }else{
-            $profile = null;
-        }
-
-        return view('profile', compact('user', 'profile'));
-    }
 }

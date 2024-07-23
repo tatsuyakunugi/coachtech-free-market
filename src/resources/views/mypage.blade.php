@@ -10,10 +10,10 @@
         <div class="user__info">
             @if($profile)
             <div class="user-image">
-                <img src="{{ Storage::url($user->profile->image_path) }}" alt="">
+                <img src="{{ Storage::url($profile->image_path) }}" alt="">
             </div>
             <div class="user-name">
-                <p>{{ $user->profile->name }}さん</p>
+                <p>{{ $profile->name }}さん</p>
             </div>
             @else
             <div class="user-name">

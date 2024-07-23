@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SellController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +30,15 @@ Route::post('/logout', [LoginController::class, 'postLogout']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [UserController::class, 'mypage']);
-    Route::get('/mypage/profile', [UserController::class, 'profile']);
 });
 
 Route::middleware('auth')->group(function () {  
+    Route::get('/mypage/profile', [ProfileController::class, 'profile']);
     Route::post('/profile_create', [ProfileController::class, 'store'])->name('profile_create');
     Route::put('/profile_update', [ProfileController::class, 'update'])->name('profile_update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/sell', [SellController::class, 'sell']);
+    Route::post('/sell', [SellController::class, 'store'])->name('sell_item.store');
 });
