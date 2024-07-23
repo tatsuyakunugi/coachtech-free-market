@@ -106,7 +106,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="name">
+                    <input type="text" name="name" placeholder="{{ $profile->name }}">
                 </div>
             </div>
             @error('name')
@@ -121,7 +121,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--postcode">
-                    <input type="text" name="post_code">
+                    <input type="text" name="post_code" placeholder="{{ $profile->post_code }}">
                 </div>
             </div>
             @error('post_code')
@@ -136,7 +136,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--address">
-                    <input type="text" name="address">
+                    <input type="text" name="address" placeholder="{{ $profile->address }}">
                 </div>
             </div>
             @error('address')
@@ -151,7 +151,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--building">
-                    <input type="text" name="building">
+                    <input type="text" name="building" placeholder="{{ $profile->building }}">
                 </div>
             </div>
         </div>
