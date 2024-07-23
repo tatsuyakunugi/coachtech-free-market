@@ -13,11 +13,16 @@
         <div class="header__inner"></div>
     </header>
     <main>
-        <div class="sell-form__content">
-            <div class="sell-form__heading">
+        <div class="sell__alert">
+            @if (session('message'))
+            <div class="sell__alert--success">{{ session('message') }}</div>
+            @endif 
+        </div>
+        <div class="sell__content">
+            <div class="sell__heading">
                 <p>商品の出品</p>
             </div>
-            <form class="sell-form" action="" method="">
+            <form class="sell-form" action="{{ route('sell_item.store') }}" method="post" enctype="multiport/form-data">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -25,14 +30,14 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--img">
-                            <input type="file" name="">
+                            <input type="file" name="image">
                         </div>
                     </div>
+                    @error('image')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリデーション-->
-                        </p>
+                        {{ $errors->first('image') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group-sentence">
                     <p>商品の詳細</p>
@@ -42,30 +47,30 @@
                         <span class="form__label">カテゴリー</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--category">
-                            <input type="" name="">
-                        </div>
+                        <select class="form__select--category">
+                            <option value="">選択してください</option>
+                        </select>
                     </div>
+                    @error('category')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリデーション-->
-                        </p>
+                        {{ $errors->first('category') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label">商品の状態</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--condition">
-                            <input type="" name="">
-                        </div>
+                        <select class="form__select--condition">
+                            <option value="">選択してください</option>
+                        </select>
                     </div>
+                    @error('condition')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリエーション-->
-                        </p>
+                        {{ $errors->first('condition') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group-sentence">
                     <p>商品名と説明</p>
@@ -76,14 +81,14 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--name">
-                            <input type="" name="">
+                            <input type="text" name="name">
                         </div>
                     </div>
+                    @error('name')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリエーション-->
-                        </p>
+                        {{ $errors->first('name') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group">
                     <div class="form__group-title">
@@ -91,14 +96,14 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--description">
-                            <input type="" name="">
+                            <textarea rows="10" name="description"></textarea>
                         </div>
                     </div>
+                    @error('description')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリエーション-->
-                        </p>
+                        {{ $errors->first('description') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__group-sentence">
                     <p>販売価格</p>
@@ -109,16 +114,17 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--price">
-                            <input type="" name="">
+                            <input type="text" name="price">
                         </div>
                     </div>
+                    @error('price')
                     <div class="form__error">
-                        <p class="form__error-message">
-                            <!--バリエーション-->
-                        </p>
+                        {{ $errors->first('price') }}
                     </div>
+                    @enderror
                 </div>
                 <div class="form__button">
+                    <input type="hidden" name="user_id" value="{{ $user->id }}">
                     <button class="form__button-submit" type="submit">出品する</button>
                 </div>
             </form>
