@@ -6,7 +6,6 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SellController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +19,10 @@ use App\Http\Controllers\SellController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
+Route::middleware('auth')->group(function () {
+    Route::get('/sell', [ItemController::class, 'sell']);
+    Route::post('/sell', [ItemController::class, 'store'])->name('sell_item.store');
+});
 
 Route::get('register', [RegisterController::class, 'getRegister']);
 Route::post('register', [RegisterController::class, 'postRegister']);
@@ -36,9 +39,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/mypage/profile', [ProfileController::class, 'profile']);
     Route::post('/profile_create', [ProfileController::class, 'store'])->name('profile_create');
     Route::put('/profile_update', [ProfileController::class, 'update'])->name('profile_update');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/sell', [SellController::class, 'sell']);
-    Route::post('/sell', [SellController::class, 'store'])->name('sell_item.store');
 });

@@ -33,6 +33,12 @@
             <div class="header__item">
                 <a class="mypage-link" href="/mypage">マイページ</a>
             </div>
+            <div class="header__item">
+                <form class="sell-form" action="/sell" method="get">
+                    @csrf
+                    <button class="sell-form__button-submit">出品</button>
+                </form>
+            </div>
             @else
             <div class="header__item">
                 <a class="login-link" href="/login">ログイン</a>
@@ -40,13 +46,13 @@
             <div class="header__item">
                 <a class="register-link" href="/register">会員登録</a>
             </div>
-            @endif
             <div class="header__item">
                 <form class="sell-form" action="/sell" method="get">
                     @csrf
-                    <button class="sell-form__button-submit">出品</button>
+                    <button class="sell-form__button-submit" disabled>出品</button>
                 </form>
             </div>
+            @endif
         </div>
     </header>
     <main>
