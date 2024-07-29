@@ -39,7 +39,7 @@ class ProfileController extends Controller
             $image = $request->file('image');
             $image_path = $image->store('public/profiles');
         }else{
-            $image_pass = null;
+            $image_path = null;
         }
         
         if($request->building)
@@ -80,10 +80,10 @@ class ProfileController extends Controller
         {
             $image = $request->file('image');
             $image_path = $image->store('public/profiles');
-        }elseif($profile->image_path == empty($request->hasFile('image'))){
+        }elseif($profile->image_path && empty($request->hasFile('image'))){
             $image_path = $profile->image_path;
         }else{
-            $image_pass = null;
+            $image_path = null;
         }
 
 
