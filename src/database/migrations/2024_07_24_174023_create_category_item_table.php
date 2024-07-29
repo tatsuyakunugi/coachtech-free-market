@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSoldItemsTable extends Migration
+class CreateCategoryItemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSoldItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sold_items', function (Blueprint $table) {
+        Schema::create('category_item', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('item_id')->constrained('items');
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSoldItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sold_items');
+        Schema::dropIfExists('category_item');
     }
 }
