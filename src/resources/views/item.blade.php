@@ -17,6 +17,17 @@
                     <p>ブランド名</p>
                     <p>￥</p>
                 </div>
+                <div class="item__utirities">
+                    <div class="item__utirity">
+                        <form class="like-form" action="{{ route('item.like', $item) }}" method="post">
+                            @csrf
+                            <button class="like-form__button-submit" type="submit">
+                                <i class="fa-regular fa-star"></i>
+                                {{ $item->followers->contains(auth()->user()) }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
                 <div class="purchase__link-form">
                     <a class="purchase__link" href="/purchase">購入する</a>
                 </div>
