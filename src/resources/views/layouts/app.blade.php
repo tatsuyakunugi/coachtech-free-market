@@ -20,14 +20,14 @@
                 <form class="search-form" action="/search" method="get">
                     @csrf
                     <input type="text" name="keyword" placeholder="何をお探しですか？">
-                    <button class="form-button">検索</button>
+                    <button class="form-button" type="submit">検索</button>
                 </form>
             </div>
             @if(Auth::check())
             <div class="header__item">
                 <form class="logout-form" action="/logout" method="post">
                     @csrf
-                    <button class="logout-form__button-submit">ログアウト</button>
+                    <button class="logout-form__button-submit" type="submit">ログアウト</button>
                 </form>
             </div>
             <div class="header__item">
@@ -36,7 +36,7 @@
             <div class="header__item">
                 <form class="sell-form" action="/sell" method="get">
                     @csrf
-                    <button class="sell-form__button-submit">出品</button>
+                    <button class="sell-form__button-submit" type="submit">出品</button>
                 </form>
             </div>
             @else
@@ -49,7 +49,7 @@
             <div class="header__item">
                 <form class="sell-form" action="/sell" method="get">
                     @csrf
-                    <button class="sell-form__button-submit" disabled>出品</button>
+                    <button class="sell-form__button-submit" type="submit" disabled>出品</button>
                 </form>
             </div>
             @endif
