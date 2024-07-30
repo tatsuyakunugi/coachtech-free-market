@@ -11,7 +11,9 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/">COACHTECH</a>
+            <a class="header__logo" href="/">
+                <img src="{{ Storage::url('public/logo/bBd0bvlYq4GEcqhlYtDj3KfPAZtCCUM6t2XB8N9i.svg') }}" alt="">
+            </a>
         </div>
     </header>
     <main>
