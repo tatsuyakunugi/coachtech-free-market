@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/item/{item}/like', [LikeController::class, 'like'])->name('item.like');
 });
+
+Route::get('/image', [UploadController::class, 'image']);
+Route::post('/image_upload', [UploadController::class, 'store'])->name('image_upload');
