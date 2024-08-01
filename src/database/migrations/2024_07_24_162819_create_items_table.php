@@ -19,8 +19,8 @@ class CreateItemsTable extends Migration
             $table->foreignId('condition_id')->constrained('conditions');
             $table->string('image_path');
             $table->string('name');
-            $table->integer('price');
             $table->text('description');
+            $table->integer('price');
             $table->timestamps();
         });
     }
