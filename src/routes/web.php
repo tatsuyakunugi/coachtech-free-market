@@ -22,6 +22,7 @@ use App\Http\Controllers\UploadController;
 */
 
 Route::get('/', [ItemController::class, 'index']);
+Route::get('/item/{item_id}', [ItemController::class, 'item']);
 
 Route::get('register', [RegisterController::class, 'getRegister']);
 Route::post('register', [RegisterController::class, 'postRegister']);
