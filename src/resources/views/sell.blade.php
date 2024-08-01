@@ -7,10 +7,17 @@
     <title>caochtech-free-market</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sell.css') }}" />
+    <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="header__inner"></div>
+        <div class="header__inner">
+            <div class="header__item">
+                <a class="header__logo" href="/">
+                    <img src="{{ Storage::url('public/logo/bBd0bvlYq4GEcqhlYtDj3KfPAZtCCUM6t2XB8N9i.svg') }}" alt="">
+                </a>
+            </div>
+        </div>
     </header>
     <main>
         <div class="sell__alert">
@@ -22,7 +29,7 @@
             <div class="sell__heading">
                 <p>商品の出品</p>
             </div>
-            <form class="sell-form" action="{{ route('sell_item.store') }}" method="post" enctype="multiport/form-data">
+            <form class="sell-form" action="{{ route('sell_item.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -47,9 +54,14 @@
                         <span class="form__label">カテゴリー</span>
                     </div>
                     <div class="form__group-content">
-                        <select class="form__select--category">
-                            <option value="">選択してください</option>
-                        </select>
+                        <div class="form__select--category">
+                            @foreach($categories as $category)
+                            <label for="">
+                                <input type="checkbox" name="category[]" id="category_id" value="{{ $category->id}}">
+                                {{ $category->name }}
+                            </label>
+                            @endforeach
+                        </div>
                     </div>
                     @error('category')
                     <div class="form__error">
@@ -62,8 +74,11 @@
                         <span class="form__label">商品の状態</span>
                     </div>
                     <div class="form__group-content">
-                        <select class="form__select--condition">
+                        <select class="form__select--condition" name="condition" id="condition_id">
                             <option value="">選択してください</option>
+                            @foreach($conditions as $condition)
+                            <option value="{{ $condition->id }}">{{ $condition->condition}}</option>
+                            @endforeach
                         </select>
                     </div>
                     @error('condition')
@@ -124,7 +139,6 @@
                     @enderror
                 </div>
                 <div class="form__button">
-                    <input type="hidden" name="user_id" value="{{ $user->id }}">
                     <button class="form__button-submit" type="submit">出品する</button>
                 </div>
             </form>
