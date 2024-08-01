@@ -15,11 +15,21 @@
         </div>
     </div>
     <div class="main__content--body">
+        @if(!$items)
         <div class="item__wrapper">
-            <div class="item-card">
-                <a class="item__link" href="/item">商品画像</a>
-            </div>
+            <p>出品された商品はありません</p>
         </div>
+        @else
+        <div class="item__wrapper">
+            @foreach($items as $item)
+            <div class="item-card">
+                <a class="item__link" href="/item/{{ $item->id }}">
+                    <img src="{{ Storage::url($item->image_path) }}" alt="">
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @endif
     </div>
 </div>
 @endsection
