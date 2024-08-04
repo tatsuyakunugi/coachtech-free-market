@@ -15,10 +15,6 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'name' => '洋服',
-        ];
-        DB::table('categories')->insert($param);
-        $param = [
             'name' => 'メンズ',
         ];
         DB::table('categories')->insert($param);
@@ -27,23 +23,23 @@ class CategoriesTableSeeder extends Seeder
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'トップス',
+            'name' => 'ベビー・キッズ',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ジャケット・アウター',
+            'name' => '洋服',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'パンツ',
+            'name' => '和服・着物',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'スカート',
+            'name' => '浴衣',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ワンピース',
+            'name' => 'スーツ・フォーマル',
         ];
         DB::table('categories')->insert($param);
         $param = [
@@ -51,63 +47,154 @@ class CategoriesTableSeeder extends Seeder
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'バッグ',
+            'name' => 'カバン',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '時計',
+            'name' => 'アクセサリー・小物',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '帽子',
+            'name' => 'ゲーム',
+        ];
+        $param = [
+            'name' => 'おもちゃ・グッズ',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'アクセサリー',
+            'name' => 'ホビー',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'スーツ',
+            'name' => '楽器',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ルームウェア・パジャマ',
+            'name' => 'アート',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '下着・アンダーウェア',
+            'name' => 'チケット',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'レッグウェア',
+            'name' => '本',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '水着・ラッシュガード',
+            'name' => '雑誌',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '学生服',
+            'name' => '小説',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '着物・浴衣',
+            'name' => '漫画',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ヘアアクセサリー',
+            'name' => 'ＣＤ・レコード',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ウィッグ・エクステ',
+            'name' => 'ＤＶＤ・ブルーレイ',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'マタニティー',
+            'name' => 'スマホ・タブレット',
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ベビー・キッズ',
+            'name' => 'パソコン・周辺機器',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'テレビ',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'オーディオ',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'カメラ',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '生活家電・空調',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'スポーツ',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'アウトドア・釣り',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '旅行用品',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'コスメ・美容',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'ダイエット・健康',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '食品',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '飲料',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '酒類',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'キッチン・日用品',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '家電・インテリア',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'ペット用品',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'ＤＩＹ・工具',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'フラワー・ガーデニング',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'ハンドメイド・手芸',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '車',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'バイク',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '自転車',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => 'その他',
         ];
         DB::table('categories')->insert($param);
     }
