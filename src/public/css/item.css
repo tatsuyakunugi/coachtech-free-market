@@ -29,6 +29,51 @@
     width: 100%;
 }
 
+.item__utilities {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.like-form__button {
+    margin-right: 30px;
+}
+
+.like-form__button-submit {
+    background-color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.unlike-form__button {
+    margin-right: 30px;
+}
+
+.unlike-form__button-submit {
+    background-color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.likes_count {
+    text-align: center;
+    font-size: 14px;
+}
+
+.comment-link__button {
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    appearance: none;
+    cursor: pointer;
+}
+
 .purchase__link-form {
     padding: 10px 20px;
     width: 100%;
@@ -43,6 +88,14 @@
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+}
+
+.category-info {
+    display: flex;
+}
+
+.category-tag {
+    margin-right: 20px;
 }
 
 
