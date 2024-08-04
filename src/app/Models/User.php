@@ -51,8 +51,18 @@ class User extends Authenticatable
         return $this->hasMany(Item::class);
     }
 
-    public function favorites()
+    public function likes()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->hasMany(Like::class);
+    }
+
+    public function like_items()
+    {
+        return $this->belongsToMany(Item::class, 'likes', 'user_id', 'item_id')->withTimestamps();
+    }
+
+    public function is_like($itemId)
+    {
+        return $this->likes()->where('item_id', $itemId)->exists();
     }
 }
