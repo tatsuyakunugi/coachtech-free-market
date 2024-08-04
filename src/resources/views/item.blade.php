@@ -19,6 +19,39 @@
                     <p>{{ $item->name }}</p>
                     <p>￥{{ $item->price }}</p>
                 </div>
+                <div class="item__utilities">
+                    @if(Auth::check())
+                    <div class="like-form__button">
+                        @if(!Auth::user()->is_like($item->id))
+                        <form class="like-form" action="{{ route('likes.store', $item) }}" method="post">
+                            @csrf
+                            <button class="like-form__button-submit" type="submit">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                        </form>
+                        <div class="likes_count">
+                            {{ $item->user->like_items->count() }}
+                        </div>
+                        @else
+                        <form class="unlike-form" action="{{ route('likes.destroy', $item) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="unlike-form__button-submit" type="submit">
+                                <i class="fa-regular fa-star"></i>
+                            </button>
+                        </form>
+                        <div class="likes_count">
+                            {{ $item->user->like_items->count() }}
+                        </div>
+                        @endif
+                    </div>
+                    @endif
+                    <div class="comment-link">
+                        <a class="comment-link__button"  href="/comment/{{ $item->id }}">
+                            <i class="fa-regular fa-comment"></i>
+                        </a>
+                    </div>
+                </div>
                 <div class="purchase__link-form">
                     <a class="purchase__link" href="/purchase">購入する</a>
                 </div>
@@ -28,10 +61,14 @@
                 </div>
                 <div class="item__info">
                     <h3>商品の情報</h3>
-                    <div class="category">
-                        <p class="category-tag">カテゴリー</p>
+                    <div class="category-info">
+                        @foreach($categories as $category)
+                        <p class="category-tag">
+                            {{ $category->name }}
+                        </p>
+                        @endforeach
                     </div>
-                    <div class="condition">
+                    <div class="condition-info">
                         <p class="condition-tag">{{ $item->condition->condition }}</p>
                     </div>
                 </div>
