@@ -15,7 +15,7 @@ class ConditionsTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'condition' => '新品、未使用に近い',
+            'condition' => '新品・未使用',
         ];
         DB::table('conditions')->insert($param);
         $param = [
@@ -23,7 +23,7 @@ class ConditionsTableSeeder extends Seeder
         ];
         DB::table('conditions')->insert($param);
         $param = [
-            'condition' => '目目立った汚れや傷は無し',
+            'condition' => '目立った汚れや傷は無し',
         ];
         DB::table('conditions')->insert($param);
         $param = [

@@ -4,22 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Item;
 
 class LikeController extends Controller
 {
-    public function like(Item $item)
+    public function store($itemId)
     {
         $user = Auth::user();
-        $isLiked = $user->favorites()->where('item_id', $item->id)->existed();
 
-        if($isLiked)
+        if(!$user->is_like($itemId))
         {
-            $user->favorites()->detach($item);
-        }else{
-            $user->favorites()->attach($item);
+            $user->like_items()->attach($itemId);
         }
+        return back();
+    }
 
+    public function destroy($itemId)
+    {
+        $user = Auth::user();
+        if($user->is_like($itemId))
+        {
+            $user->like_items()->detach($itemId);
+        }
         return back();
     }
 }

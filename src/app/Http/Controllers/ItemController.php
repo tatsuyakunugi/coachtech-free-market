@@ -16,6 +16,7 @@ class ItemController extends Controller
     public function item($id)
     {
         $item = Item::find($id);
-        return view('item', compact('item'));
+        $categories = $item->categories;
+        return view('item', compact('item', 'categories'));
     }
 }
