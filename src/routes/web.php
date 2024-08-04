@@ -48,7 +48,8 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/item/{item}/like', [LikeController::class, 'like'])->name('item.like');
+    Route::post('/like/{item}}', [LikeController::class, 'store'])->name('likes.store');
+    Route::delete('/unlike{item}', [LikeController::class, 'destroy'])->name('likes.destroy');
 });
 
 Route::get('/image', [UploadController::class, 'image']);
