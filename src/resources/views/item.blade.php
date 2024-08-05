@@ -46,10 +46,16 @@
                         @endif
                     </div>
                     @endif
-                    <div class="comment-link">
-                        <a class="comment-link__button"  href="/comment/{{ $item->id }}">
-                            <i class="fa-regular fa-comment"></i>
-                        </a>
+                    <div class="coment__link-form--button">
+                        <form class="comment__link-form" action="/comment/{{ $item->id }}" method="get">
+                            @csrf
+                            <button class="coment__link-form--button-submit" type="submit">
+                                <i class="fa-regular fa-comment"></i>
+                            </button>
+                        </form>
+                        <div class="comments_count">
+                            {{ $comments->count() }}
+                        </div>
                     </div>
                 </div>
                 <div class="purchase__link-form">
@@ -62,14 +68,18 @@
                 <div class="item__info">
                     <h3>商品の情報</h3>
                     <div class="category-info">
+                        <span class="category-tag">カテゴリー</span>
                         @foreach($categories as $category)
-                        <p class="category-tag">
+                        <p class="category-tag__item">
                             {{ $category->name }}
                         </p>
                         @endforeach
                     </div>
                     <div class="condition-info">
-                        <p class="condition-tag">{{ $item->condition->condition }}</p>
+                        <span class="condition-tag">商品の状態</span>
+                        <p class="condition-tag__item">
+                            {{ $item->condition->condition }}
+                        </p>
                     </div>
                 </div>
             </div>
