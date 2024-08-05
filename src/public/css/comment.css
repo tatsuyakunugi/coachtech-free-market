@@ -1,0 +1,98 @@
+.comment__content {
+    max-width: 1230px;
+    margin: 30px auto;
+}
+
+.comment__content--inner {
+    display: flex;
+}
+
+.item__image,
+.comment__body {
+    width: 50%;
+    padding: 20px 30px;
+    font-weight: bold;
+}
+
+.item__image-card {
+    width: 400px;
+    height: 500px;
+    border: 1px solid #ddd;
+}
+
+.item__image-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.comment__body--inner {
+    width: 100%;
+}
+
+.item__utilities {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.like-form__button,
+.unlike-form__button {
+    margin-right: 30px;
+}
+
+.like-form__button-submit,
+.unlike-form__button-submit,
+.coment__link-form--button-submit {
+    background-color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.likes_count,
+.comments_count {
+    text-align: center;
+    font-size: 14px;
+}
+
+.comment-link__button {
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form__group {
+    margin-bottom: 15px;
+}
+
+.form__group-title {
+    text-align: left;
+}
+
+.form__input--comment textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+    cursor: pointer;
+}
+
+.form__button {
+    margin-top: 30px;
+  }
+  
+.form__button-submit {
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}
