@@ -34,24 +34,14 @@
     margin-bottom: 20px;
 }
 
-.like-form__button {
-    margin-right: 30px;
-}
-
-.like-form__button-submit {
-    background-color: #fff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    appearance: none;
-    cursor: pointer;
-}
-
+.like-form__button,
 .unlike-form__button {
     margin-right: 30px;
 }
 
-.unlike-form__button-submit {
+.like-form__button-submit,
+.unlike-form__button-submit,
+.coment__link-form--button-submit {
     background-color: #fff;
     font-size: 18px;
     border: none;
@@ -60,18 +50,10 @@
     cursor: pointer;
 }
 
-.likes_count {
+.likes_count,
+.comments_count {
     text-align: center;
     font-size: 14px;
-}
-
-.comment-link__button {
-    background-color: #fff;
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-    appearance: none;
-    cursor: pointer;
 }
 
 .purchase__link-form {
@@ -92,10 +74,23 @@
 
 .category-info {
     display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
-.category-tag {
+.category-tag,
+.condition-tag {
+    margin-right: 30px;
+}
+
+.category-tag__item {
     margin-right: 20px;
+}
+
+.condition-info {
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 
