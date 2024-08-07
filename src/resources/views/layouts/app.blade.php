@@ -19,7 +19,7 @@
                 </a>
             </div>
             <div class="header__item">
-                <form class="search-form" action="/search" method="get">
+                <form class="search-form" action="{{ route('item.index') }}" method="get">
                     @csrf
                     <input type="text" name="keyword" placeholder="何をお探しですか？">
                     <button class="form-button" type="submit">検索</button>
