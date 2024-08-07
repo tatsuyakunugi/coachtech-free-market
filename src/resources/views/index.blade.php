@@ -7,12 +7,25 @@
 @section('content')
 <div class="main__content">
     <div class="main__content--heading">
-        <div class="">
-            <a href="">おすすめ</a>
-        </div>
-        <div class="">
-            <a href="">マイリスト</a>
-        </div>
+        @if(Auth::check())
+        <form class="all-item__search"  action="{{ route('item.index') }}" method="get">
+            @csrf
+            <button class="all-item__link" type="submit">おすすめ</button>
+        </form>
+        <form class="mylist__search" action="{{ Route('mylist.index') }}" method="get">
+            @csrf
+            <button class="mylist__link" type="submit">マイリスト</button>
+        </form>
+        @else
+        <form class="all-item__search" action="{{ route('item.index') }}" method="get">
+            @csrf
+            <button class="all-item__link" type="submit">おすすめ</button>
+        </form>
+        <form class="mylist__search" action="{{ Route('mylist.index') }}" method="get">
+            @csrf
+            <button class="mylist__link" type="submit" disabled>マイリスト</button>
+        </form>
+        @endif
     </div>
     <div class="main__content--body">
         @if(!$items)
