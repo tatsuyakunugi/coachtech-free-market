@@ -22,11 +22,14 @@ use App\Http\Controllers\UploadController;
 |
 */
 
-Route::get('/', [ItemController::class, 'index']);
+Route::get('/', [ItemController::class, 'index'])->name('item.index');
 Route::get('/item/{item_id}', [ItemController::class, 'item']);
+Route::middleware('auth')->group(function () {
+    Route::get('/mylist', [ItemController::class, 'getMyList'])->name('mylist.index');
+});
 
-Route::get('register', [RegisterController::class, 'getRegister']);
-Route::post('register', [RegisterController::class, 'postRegister']);
+Route::get('/register', [RegisterController::class, 'getRegister']);
+Route::post('/register', [RegisterController::class, 'postRegister']);
 
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);

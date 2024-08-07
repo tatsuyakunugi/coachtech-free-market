@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Profile;
+use App\Models\Item;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -18,6 +18,13 @@ class UserController extends Controller
         }else{
             $profile = null;
         }
-        return view('mypage', compact('user', 'profile'));
+
+        $items = '';
+        if(Item::where('user_id', $user->id)->exists())
+        {
+            $items = Item::where('user_id', $user->id)->get();
+        }
+
+        return view('mypage', compact('user', 'profile', 'items'));
     }
 }

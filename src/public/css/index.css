@@ -1,8 +1,30 @@
 .main__content--heading {
     display: flex;
     justify-content: left;
-    padding: 30px 30px 0px 30px;
+    padding: 30px 100px 0px;
     border-bottom: 3px solid #ddd;
+}
+
+.all-item__search {
+    margin-right: 30px;
+}
+
+.all-item__link {
+    background-color: #fff;
+    color: red;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mylist__link {
+    background-color: #fff;
+    color: gray;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .main__content--body {

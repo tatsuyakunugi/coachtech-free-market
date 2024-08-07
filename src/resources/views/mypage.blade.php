@@ -25,16 +25,32 @@
             </div>
         </div>
         <div class="item__link">
-            <div class="">
-                <a href="">出品した商品</a>
-            </div>
-            <div class="">
-                <a href="">購入した商品</a>
-            </div>
+            <form class="sell-item__search" action="/mypage" method="get">
+                @csrf
+                <button class="sell-item__link" type="submit">出品した商品</button>
+            </form>
+            <form class="purchase-item__search" action="" method="get">
+                @csrf
+                <button class="purchase-item__link" type="submit">購入した商品</button>
+            </form>
         </div>
     </div>
     <div class="mypage__content--body">
-        <div class="item-card"></div>
+        @if(!$items)
+        <div class="item__wrapper">
+            <p>該当の商品はありません</p>
+        </div>
+        @else
+        <div class="item__wrapper">
+            @foreach($items as $item)
+            <div class="item-card">
+                <a class="item__link" href="/item/{{ $item->id }}">
+                    <img src="{{ Storage::url($item->image_path) }}" alt="">
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @endif
     </div>
 </div>
 @endsection
