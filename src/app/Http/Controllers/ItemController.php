@@ -3,14 +3,58 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\Like;
 use App\Models\Comment;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $items = Item::all();
+        $keyword = $request->input('keyword');
+        $dt = Item::with('categories');
+
+        if(!empty($keyword))
+        {
+            $dt->where('name', 'like', '%' . $keyword . '%')
+            ->orwhereHas('condition', function ($query) use ($keyword) {
+                $query->where('condition', 'like', '%' . $keyword . '%');
+            })
+            ->orwhereHas('categories', function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%');
+            })->get();
+        }
+
+        $items = $dt->get();
+
+        return view('index', compact('items'));
+    }
+
+    public function getMyList(Request $request)
+    {
+        $user = Auth::user();
+        $keyword = $request->input('keyword');
+        $dt = Item::with('categories');
+
+        if(!empty($keyword))
+        {
+            $dt->where('name', 'like', '%' . $keyword . '%')
+            ->orwhereHas('condition', function ($query) use ($keyword) {
+                $query->where('condition', 'like', '%' . $keyword . '%');
+            })
+            ->orwhereHas('categories', function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%');
+            })->get();
+        }
+
+        $items = $dt->get();
+
+        if(Like::where('user_id', $user->id)->exists())
+        {
+            $items = $user->like_items()->get();
+        }
+
         return view('index', compact('items'));
     }
 
