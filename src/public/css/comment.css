@@ -1,3 +1,10 @@
+.comment__alert--success {
+    padding: 10px 30px;
+    border-color: #badbcc;
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
 .comment__content {
     max-width: 1230px;
     margin: 30px auto;
@@ -80,6 +87,13 @@
     border-radius: 3px;
     appearance: none;
     cursor: pointer;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+    font-weight: 400;
 }
 
 .form__button {
