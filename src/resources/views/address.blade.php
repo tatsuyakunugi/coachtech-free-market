@@ -25,7 +25,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--postcode">
-                            <input type="text" name="postcode">
+                            <input type="text" name="post_code" placeholder="{{ $item->user->profile->post_code }}">
                         </div>
                     </div>
                     <div class="form__error">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--address">
-                            <input type="text" name="address">
+                            <input type="text" name="address" placeholder="{{ $item->user->profile->address }}">
                         </div>
                     </div>
                     <div class="form__error">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--building">
-                            <input type="text" name="building">
+                            <input type="text" name="building" placeholder="{{ $item->user->profile->building }}">
                         </div>
                     </div>
                     <div class="form__error">
