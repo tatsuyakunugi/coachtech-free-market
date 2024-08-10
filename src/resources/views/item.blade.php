@@ -22,7 +22,7 @@
                 <div class="item__utilities">
                     @if(Auth::check())
                     <div class="like-form__button">
-                        @if(!Auth::user()->is_like($item->id))
+                        @if(!Auth::user()->is_like($item))
                         <form class="like-form" action="{{ route('likes.store', $item) }}" method="post">
                             @csrf
                             <button class="like-form__button-submit" type="submit">
@@ -30,7 +30,7 @@
                             </button>
                         </form>
                         <div class="likes_count">
-                            {{ $item->user->like_items->count() }}
+                            {{ $item->likes_count }}
                         </div>
                         @else
                         <form class="unlike-form" action="{{ route('likes.destroy', $item) }}" method="post">
@@ -41,13 +41,13 @@
                             </button>
                         </form>
                         <div class="likes_count">
-                            {{ $item->user->like_items->count() }}
+                            {{ $item->likes_count }}
                         </div>
                         @endif
                     </div>
                     @endif
                     <div class="coment__link-form--button">
-                        <form class="comment__link-form" action="/comment/{{ $item->id }}" method="get">
+                        <form class="comment__link-form" action="{{ route('comment.create', $item->id) }}" method="get">
                             @csrf
                             <button class="coment__link-form--button-submit" type="submit">
                                 <i class="fa-regular fa-comment"></i>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="purchase__link-form">
-                    <a class="purchase__link" href="/purchase">購入する</a>
+                    <a class="purchase__link" href="/purchase/{{ $item->id }}">購入する</a>
                 </div>
                 <div class="item__explanation">
                     <h3>商品説明</h3>
