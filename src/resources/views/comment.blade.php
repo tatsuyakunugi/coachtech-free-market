@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<div class="comment__alert">
+    @if (session('message'))
+    <div class="comment__alert--success">{{ session('message') }}</div>
+    @endif 
+</div>
 <div class="comment__content">
     <div class="comment__content--inner">
         <div class="item__image">
@@ -30,7 +35,7 @@
                             </button>
                         </form>
                         <div class="likes_count">
-                            {{ $item->user->like_items->count() }}
+                            {{ $item->likes_count }}
                         </div>
                         @else
                         <form class="unlike-form" action="{{ route('likes.destroy', $item) }}" method="post">
@@ -41,7 +46,7 @@
                             </button>
                         </form>
                         <div class="likes_count">
-                            {{ $item->user->like_items->count() }}
+                            {{ $item->likes_count }}
                         </div>
                         @endif
                     </div>
@@ -63,7 +68,7 @@
                     <p>{{ $user->profile->name }}</p>
                 </div>
             </div>
-            <form class="comment-form" action="" method="post">
+            <form class="comment-form" action="{{ route('comment.store', $item->id) }}" method="post">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">
@@ -72,6 +77,11 @@
                     <div class="form__input--comment">
                         <textarea rows="10" name="comment"></textarea>
                     </div>
+                    @error('comment')
+                    <div class="form__error">
+                        {{ $errors->first('comment') }}
+                    </div>
+                    @enderror
                 </div>
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">
