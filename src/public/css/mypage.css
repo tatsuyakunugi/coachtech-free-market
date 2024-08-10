@@ -16,13 +16,17 @@
 
 .user-image {
     width: 20%;
+    margin-right: 30px;
 }
 
 .user-image img {
     width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50%;
 }
 
 .profile__link {
+    margin-left: 20px;
     padding: 5px 10px;
     font-size: 12px;
     color: #ff0000;

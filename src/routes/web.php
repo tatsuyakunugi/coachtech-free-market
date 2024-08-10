@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UploadController;
 
 /*
@@ -52,12 +53,18 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::post('/like/{item}}', [LikeController::class, 'store'])->name('likes.store');
-    Route::delete('/unlike{item}', [LikeController::class, 'destroy'])->name('likes.destroy');
+    Route::post('/like/{item}', [LikeController::class, 'store'])->name('likes.store');
+    Route::delete('/unlike/{item}', [LikeController::class, 'destroy'])->name('likes.destroy');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/comment/{item_id}', [CommentController::class, 'comment']);
+    Route::get('/comment/{item_id}', [CommentController::class, 'comment'])->name('comment.create');
+    Route::post('/comment/{item_id}', [CommentController::class, 'store'])->name('comment.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
+    Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
 });
 
 Route::get('/image', [UploadController::class, 'image']);

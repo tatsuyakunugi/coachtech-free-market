@@ -54,9 +54,15 @@
                         <span class="form__label">カテゴリー</span>
                     </div>
                     <div class="form__group-content">
+                        <div class="form__open--select">
+                            <label>
+                                <input type="checkbox" id="open__select">
+                                選択してください
+                            </label>
+                        </div>
                         <div class="form__select--category">
                             @foreach($categories as $category)
-                            <label for="">
+                            <label>
                                 <input type="checkbox" name="category[]" id="category_id" value="{{ $category->id}}">
                                 {{ $category->name }}
                             </label>

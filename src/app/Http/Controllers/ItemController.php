@@ -60,7 +60,7 @@ class ItemController extends Controller
 
     public function item($id)
     {
-        $item = Item::find($id);
+        $item = Item::withCount('likes')->find($id);
         $categories = $item->categories;
         $comments = Comment::with(['user', 'replies', 'replies.user'])
             ->where('comments.item_id', $id)

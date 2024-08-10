@@ -9,10 +9,12 @@
     <div class="purchase__content--inner">
         <div class="item-edit__body">
             <div class="item__info--item">
-                <div class="item__image"></div>
+                <div class="item__image">
+                    <img src="{{ Storage::url($item->image_path) }}" alt="">
+                </div>
                 <div class="item__info">
-                    <h2>商品名</h2>
-                    <p>￥</p>
+                    <h2>{{ $item->name }}</h2>
+                    <p>￥{{ $item->price }}</p>
                 </div>
             </div>
             <div class="item-edit__body--item">
@@ -21,7 +23,7 @@
             </div>
             <div class="item-edit__body--item">
                 <p class="address__link-tag">配送先</p>
-                <a class="address__link" href="">変更する</a>
+                <a class="address__link" href="/purchase/address/{{ $item->id }}">変更する</a>
             </div>
         </div>
         <div class="purchase__body">
@@ -29,11 +31,11 @@
                 <div class="purchase__form-card">
                     <div class="purchase__form-card--item">
                         <p>商品代金</p>
-                        <p>￥</p>
+                        <p>￥{{ $item->price }}</p>
                     </div>
                     <div class="purchase__form-card--item">
                         <p>支払い金額</p>
-                        <p>￥</p>
+                        <p>￥{{ $item->price }}</p>
                     </div>
                     <div class="purchase__form-card--item">
                         <p>支払い方法</p>

@@ -12,7 +12,7 @@
             @csrf
             <button class="all-item__link" type="submit">おすすめ</button>
         </form>
-        <form class="mylist__search" action="{{ Route('mylist.index') }}" method="get">
+        <form class="mylist__search" action="{{ route('mylist.index') }}" method="get">
             @csrf
             <button class="mylist__link" type="submit">マイリスト</button>
         </form>
@@ -21,7 +21,7 @@
             @csrf
             <button class="all-item__link" type="submit">おすすめ</button>
         </form>
-        <form class="mylist__search" action="{{ Route('mylist.index') }}" method="get">
+        <form class="mylist__search" action="{{ route('mylist.index') }}" method="get">
             @csrf
             <button class="mylist__link" type="submit" disabled>マイリスト</button>
         </form>
