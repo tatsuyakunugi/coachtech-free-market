@@ -41,4 +41,29 @@ class CommentController extends Controller
 
         return redirect()->route('comment.create', ['item_id' => $item_id])->with('message', 'コメントを投稿しました');
     }
+
+    public function destroy(Request $request, $id)
+    {
+        $comment = Comment::find($request->comment_id);
+        $item = Item::find($id);
+        $item_id = $item->id;
+        $comment->delete();
+
+        return redirect()->route('comment.show', ['item_id' => $item_id])->with('message', 'コメントを削除しました');
+    }
+
+    public function show($id)
+    {
+        $user = Auth::user();
+        $comments = '';
+
+        if(Comment::where('item_id', $id)->exists())
+        {
+            $comments = Comment::with(['user', 'replies', 'replies.user'])
+            ->where('comments.item_id', $id)
+            ->get();
+        }
+
+        return view('comment_list', compact('user', 'comments'));
+    }
 }
