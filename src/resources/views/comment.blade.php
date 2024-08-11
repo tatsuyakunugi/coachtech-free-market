@@ -52,7 +52,7 @@
                     </div>
                     @endif
                     <div class="coment__link-form--button">
-                        <form class="comment__link-form" action="/comment/{{ $item->id }}" method="get">
+                        <form class="comment__link-form" action="{{ route('comment.show', $item->id) }}" method="get">
                             @csrf
                             <button class="coment__link-form--button-submit" type="submit">
                                 <i class="fa-regular fa-comment"></i>
