@@ -60,6 +60,8 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/comment/{item_id}', [CommentController::class, 'comment'])->name('comment.create');
     Route::post('/comment/{item_id}', [CommentController::class, 'store'])->name('comment.store');
+    Route::delete('/comment/{item_id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+    Route::get('/comment_list/{item_id}', [CommentController::class, 'show'])->name('comment.show');
 });
 
 Route::middleware('auth')->group(function () {
