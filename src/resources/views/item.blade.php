@@ -22,7 +22,7 @@
                 <div class="item__utilities">
                     @if(Auth::check())
                     <div class="like-form__button">
-                        @if(!Auth::user()->is_like($item))
+                        @if(!Auth::user()->is_like($item->id))
                         <form class="like-form" action="{{ route('likes.store', $item) }}" method="post">
                             @csrf
                             <button class="like-form__button-submit" type="submit">

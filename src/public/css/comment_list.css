@@ -23,29 +23,42 @@
 }
 
 .message {
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .comment-card {
     width: 70%;
+    margin-bottom: 30px;
     padding: 10px 20px;
     border: 3px solid #808080;
     border-radius: 3px;
 }
 
-.comment-card__heading {
+.reply-card {
+    width: 70%;
+    margin: 0 0 30px auto;
+    padding: 10px 20px;
+    border: 3px solid #0000ff;
+    border-radius: 3px;
+}
+
+.comment-card__heading,
+.reply-card__heading {
     text-align: left;
 }
 
-.comment-card__date {
+.comment-card__date,
+.reply-card__date {
     text-align: right;
 }
 
 .delete-form__button,
 .reply-form__button {
     text-align: right;
+    margin-bottom: 20px;
 }
 
 .delete-form__button-submit,

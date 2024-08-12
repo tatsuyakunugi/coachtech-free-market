@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\UploadController;
 
@@ -62,6 +63,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/comment/{item_id}', [CommentController::class, 'store'])->name('comment.store');
     Route::delete('/comment/{item_id}', [CommentController::class, 'destroy'])->name('comment.destroy');
     Route::get('/comment_list/{item_id}', [CommentController::class, 'show'])->name('comment.show');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/reply/{comment_id}', [ReplyController::class, 'reply'])->name('reply.create');
+    Route::post('/reply/{comment_id}', [ReplyController::class, 'store'])->name('reply.store');
 });
 
 Route::middleware('auth')->group(function () {
