@@ -59,14 +59,14 @@
                                 <input type="checkbox" id="open__select">
                                 選択してください
                             </label>
-                        </div>
-                        <div class="form__select--category">
+                            <ul class="form__select--category">
                             @foreach($categories as $category)
-                            <label>
+                            <li class="form__select--category-item">
                                 <input type="checkbox" name="category[]" id="category_id" value="{{ $category->id}}">
                                 {{ $category->name }}
-                            </label>
+                            </li>
                             @endforeach
+                        </ul>
                         </div>
                     </div>
                     @error('category')
