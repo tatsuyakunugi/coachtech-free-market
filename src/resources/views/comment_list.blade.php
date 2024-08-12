@@ -32,6 +32,9 @@
             </div>
             @else
             @foreach($comments as $comment)
+            <div class="message">
+                <p>コメント一覧</p>
+            </div>
             <div class="comment-list__item">
                 <div class="comment-card">
                     <div class="comment-card__heading">
@@ -54,12 +57,26 @@
                     </div>
                     @else(($comment->item->user_id) == ($user->id))
                     <div class="reply-form">
-                        <form class="reply-form__button" action="" method="">
+                        <form class="reply-form__button" action="{{ route('reply.create', $comment->id) }}" method="get">
+                            @csrf
                             <button class="reply-form__button-submit" type="submit">このコメントに返信する</button>
                         </form>
                     </div>
                     @endif
                 </div>
+                @foreach($comment->replies as $reply)
+                <div class="reply-card">
+                    <div class="reply-card__heading">
+                        <p>{{ $reply->user->profile->name }}</p>
+                    </div>
+                    <div class="reply-card__body">
+                        <p>{{ $reply->reply }}</p>
+                    </div>
+                    <div class="reply-card__date">
+                        <p>{{ $reply->created_at }}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
             @endforeach
             @endif
