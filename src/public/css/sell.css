@@ -63,11 +63,20 @@
     text-align: left;
 }
 
+.form__input--img-input {
+    padding: 5px;
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+}
+
 .form__input--name input,
 .form__input--description textarea,
 .form__input--price input,
-.form__select--category,
+.form__modal-button,
 .form__open--select,
+.form__select--category,
 .form__select--condition {
     padding: 10px;
     width: 100%;
@@ -77,8 +86,28 @@
     cursor: pointer;
 }
 
-.form__select--category label {
-    display: block;
+.form__modal-button {
+    background-color: #fff;
+    text-align: left;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+}
+
+.form__select--category input {
+    margin-right: 20px;
+}
+
+.close-button {
+    padding: 5px;
+    width: 20%;
+    border: none;
+    border-radius: 3px;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
 }
 
 .form__button {

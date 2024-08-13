@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sell.css') }}" />
     <link href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" rel="stylesheet">
+    @livewireStyles
 </head>
 <body>
     <header class="header">
@@ -37,7 +38,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--img">
-                            <input type="file" name="image">
+                            <input class="form__input--img-input" type="file" name="image">
                         </div>
                     </div>
                     @error('image')
@@ -53,22 +54,7 @@
                     <div class="form__group-title">
                         <span class="form__label">カテゴリー</span>
                     </div>
-                    <div class="form__group-content">
-                        <div class="form__open--select">
-                            <label>
-                                <input type="checkbox" id="open__select">
-                                選択してください
-                            </label>
-                            <ul class="form__select--category">
-                            @foreach($categories as $category)
-                            <li class="form__select--category-item">
-                                <input type="checkbox" name="category[]" id="category_id" value="{{ $category->id}}">
-                                {{ $category->name }}
-                            </li>
-                            @endforeach
-                        </ul>
-                        </div>
-                    </div>
+                    <livewire:categories :categories="$categories">
                     @error('category')
                     <div class="form__error">
                         {{ $errors->first('category') }}
@@ -150,5 +136,6 @@
             </form>
         </div>
     </main>
+    @livewireScripts
 </body>
 </html>

@@ -42,6 +42,7 @@
     width: 200px;
     height: 200px;
     border: 1px solid #ddd;
+    margin-bottom: 30px;
 }
 
 .item-card img {
