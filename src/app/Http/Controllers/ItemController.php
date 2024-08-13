@@ -34,21 +34,7 @@ class ItemController extends Controller
     public function getMyList(Request $request)
     {
         $user = Auth::user();
-        $keyword = $request->input('keyword');
-        $dt = Item::with('categories');
-
-        if(!empty($keyword))
-        {
-            $dt->where('name', 'like', '%' . $keyword . '%')
-            ->orwhereHas('condition', function ($query) use ($keyword) {
-                $query->where('condition', 'like', '%' . $keyword . '%');
-            })
-            ->orwhereHas('categories', function ($query) use ($keyword) {
-                $query->where('name', 'like', '%' . $keyword . '%');
-            })->get();
-        }
-
-        $items = $dt->get();
+        $items = '';
 
         if(Like::where('user_id', $user->id)->exists())
         {
