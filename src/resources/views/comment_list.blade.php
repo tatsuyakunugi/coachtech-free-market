@@ -31,10 +31,10 @@
                 <p>コメントはありません</p>
             </div>
             @else
-            @foreach($comments as $comment)
             <div class="message">
                 <p>コメント一覧</p>
             </div>
+            @foreach($comments as $comment)
             <div class="comment-list__item">
                 <div class="comment-card">
                     <div class="comment-card__heading">
