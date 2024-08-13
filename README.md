@@ -54,6 +54,8 @@
 
 6．php artisan storage:link
 
+7. composer require livewire/livewire
+
 ## その他
 
 ### テスト用ユーザー
