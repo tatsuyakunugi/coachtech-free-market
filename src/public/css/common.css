@@ -23,6 +23,14 @@
     cursor: pointer;
 }
 
+.form__button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+}
+
 .login-link,
 .register-link,
 .mypage-link {
