@@ -43,6 +43,19 @@
     text-align: left;
 }
 
+.image-upload {
+    padding: 5px;
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form__input--image input {
+    display: none;
+}
+
 .form__input--name input,
 .form__input--postcode input,
 .form__input--address input,
