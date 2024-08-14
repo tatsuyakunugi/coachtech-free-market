@@ -10,6 +10,22 @@
     margin: 30px auto;
 }
 
+.redirect__button {
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
+}
+
+.item__link {
+    padding: 5px 10px;
+    background-color: #fff;
+    font-size: 20px;
+    color: #808080;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
 .comment__content--inner {
     display: flex;
 }
