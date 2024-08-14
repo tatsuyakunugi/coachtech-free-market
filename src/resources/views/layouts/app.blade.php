@@ -22,7 +22,9 @@
                 <form class="search-form" action="{{ route('item.index') }}" method="get">
                     @csrf
                     <input type="text" name="keyword" placeholder="何をお探しですか？">
-                    <button class="form-button" type="submit">検索</button>
+                    <button class="form__button" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </form>
             </div>
             @if(Auth::check())
