@@ -10,7 +10,11 @@
         <div class="user__info">
             @if($profile)
             <div class="user-image">
+                @if(!is_null($profile->image_path))
                 <img src="{{ Storage::url($profile->image_path) }}" alt="">
+                @else
+                <p class="user-image__null"></p>
+                @endif
             </div>
             <div class="user-name">
                 <p>{{ $profile->name }}さん</p>
@@ -38,7 +42,7 @@
     <div class="mypage__content--body">
         @if(!$items)
         <div class="item__wrapper">
-            <p>該当の商品はありません</p>
+            <p>該当する商品はありません</p>
         </div>
         @else
         <div class="item__wrapper">
