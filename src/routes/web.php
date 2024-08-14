@@ -42,9 +42,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {  
-    Route::get('/mypage/profile', [ProfileController::class, 'profile']);
-    Route::post('/profile_create', [ProfileController::class, 'store'])->name('profile_create');
-    Route::put('/profile_update', [ProfileController::class, 'update'])->name('profile_update');
+    Route::get('/mypage/profile', [ProfileController::class, 'profile'])->name('profile.create');
+    Route::post('/mypage/profile', [ProfileController::class, 'store'])->name('profile.store');
+    Route::put('mypage/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::middleware('auth')->group(function () {
