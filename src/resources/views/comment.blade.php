@@ -11,6 +11,11 @@
     @endif 
 </div>
 <div class="comment__content">
+    <div class="redilect__button">
+        <a class="item__link" href="/item/{{ $item->id }}">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+    </div>
     <div class="comment__content--inner">
         <div class="item__image">
             <div class="item__image-card">

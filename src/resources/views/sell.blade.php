@@ -27,6 +27,11 @@
             @endif 
         </div>
         <div class="sell__content">
+            <div class="redirect__button">
+                <a class="mypage__link" href="/mypage">
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+            </div>
             <div class="sell__heading">
                 <p>商品の出品</p>
             </div>
@@ -37,10 +42,10 @@
                         <span class="form__label">商品画像</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--img">
-                            <input class="form__input--img-input" type="file" name="image">
+                        <div class="form__input--image">
+                            <label class="image-upload" for="image">ファイルを選択</label>
+                            <input type="file" name="image" id="image">
                         </div>
-                    </div>
                     @error('image')
                     <div class="form__error">
                         {{ $errors->first('image') }}

@@ -30,7 +30,7 @@
     <div class="main__content--body">
         @if(!$items)
         <div class="item__wrapper">
-            <p>出品された商品はありません</p>
+            <p>お気に入り登録をした商品はありません</p>
         </div>
         @else
         <div class="item__wrapper">
