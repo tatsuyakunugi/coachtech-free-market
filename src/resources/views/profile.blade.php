@@ -15,12 +15,9 @@
         <p>プロフィール設定</p>
     </div>
     @if(empty($profile))
-    <form class="profile-form" action="{{ route('profile_create') }}" method="post" enctype="multipart/form-data">
+    <form class="profile-form" action="{{ route('profile.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label">新規</span>
-            </div>
             <div class="form__group-content">
                 <div class="form__input--file">
                     <input type="file" name="image">
@@ -87,16 +84,14 @@
         </div>
     </form>
     @else
-    <form class="profile-form" action="{{ route('profile_update') }}" method="post" enctype="multipart/form-data">
+    <form class="profile-form" action="{{ route('profile.update') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label">更新</span>
-            </div>
             <div class="form__group-content">
-                <div class="form__input--file">
-                    <input type="file" name="image">
+                <div class="form__input--image">
+                    <label class="image-upload" for="image">ファイルを選択</label>
+                    <input type="file" name="image" id="image">
                 </div>
             </div>
         </div>
