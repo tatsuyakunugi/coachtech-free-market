@@ -19,8 +19,9 @@
         @csrf
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--file">
-                    <input type="file" name="image">
+                <div class="form__input--image">
+                    <label class="image-upload" for="image">ファイルを選択</label>
+                    <input type="file" name="image" id="image">
                 </div>
             </div>
         </div>
