@@ -55,7 +55,7 @@ class CategoriesTableSeeder extends Seeder
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => 'ゲーム',
+            'name' => 'ゲーム・ゲーム機',
         ];
         $param = [
             'name' => 'おもちゃ・グッズ',
@@ -67,6 +67,10 @@ class CategoriesTableSeeder extends Seeder
         DB::table('categories')->insert($param);
         $param = [
             'name' => '楽器',
+        ];
+        DB::table('categories')->insert($param);
+        $param = [
+            'name' => '音響機材',
         ];
         DB::table('categories')->insert($param);
         $param = [
@@ -154,7 +158,7 @@ class CategoriesTableSeeder extends Seeder
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '酒類',
+            'name' => 'アルコール類',
         ];
         DB::table('categories')->insert($param);
         $param = [
