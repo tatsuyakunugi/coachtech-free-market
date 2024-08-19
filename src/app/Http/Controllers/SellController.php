@@ -32,11 +32,12 @@ class SellController extends Controller
         ]);
 
         $user = Auth::user();
+        $user_id = $user->id;
         $image = $request->file('image');
         $image_path = $image->store('public/items');
 
         $item = new Item([
-            'user_id' => $user->id,
+            'user_id' => $user_id,
             'condition_id' => $request->input('condition'),
             'image_path' => $image_path,
             'name' => $request->input('name'),

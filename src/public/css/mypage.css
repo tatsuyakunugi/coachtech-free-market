@@ -35,6 +35,10 @@
     border-radius: 50%;
 }
 
+.user-name {
+    font-weight: bold;
+}
+
 .profile__link {
     margin-left: 20px;
     padding: 5px 10px;
@@ -46,7 +50,7 @@
     cursor: pointer;
 }
 
-.item__link {
+.item__search-form {
     display: flex;
     justify-content: left;
     align-items: center;
@@ -57,7 +61,7 @@
     margin-right: 30px;
 }
 
-.sell-item__link {
+.sell-item__button {
     background-color: #fff;
     color: red;
     border: none;
@@ -66,7 +70,7 @@
     cursor: pointer;
 }
 
-.purchase-item__link {
+.purchase-item__button {
     background-color: #fff;
     color: gray;
     border: none;
