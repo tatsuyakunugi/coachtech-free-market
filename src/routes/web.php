@@ -11,6 +11,9 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\AdminRegisterController;
+use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\UploadController;
 
 /*
@@ -74,6 +77,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
     Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
 });
+
+Route::middleware('guest:admin')->group(function () {
+    Route::get('/admin/login', [AdminLoginController::class, 'getAdminLogin'])->name('admin.showLogin');
+    Route::post('/admin/login', [AdminLoginController::class, 'postAdminLogin']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin', [AdminUserController::class, 'show']);
+    Route::post('/admin/logout', [AdminLoginController::class, 'postAdminLogout']);
+});
+
+Route::get('/admin/register', [AdminRegisterController::class, 'getAdminRegister']);
+Route::post('/admin/register', [AdminRegisterController::class, 'postAdminRegister']);
 
 Route::get('/image', [UploadController::class, 'image']);
 Route::post('/image_upload', [UploadController::class, 'store'])->name('image_upload');
