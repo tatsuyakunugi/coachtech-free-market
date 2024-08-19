@@ -28,14 +28,14 @@
                 <a class="profile__link" href="mypage/profile">プロフィールを編集</a>
             </div>
         </div>
-        <div class="item__link">
+        <div class="item__search-form">
             <form class="sell-item__search" action="/mypage" method="get">
                 @csrf
-                <button class="sell-item__link" type="submit">出品した商品</button>
+                <button class="sell-item__button" type="submit">出品した商品</button>
             </form>
             <form class="purchase-item__search" action="" method="get">
                 @csrf
-                <button class="purchase-item__link" type="submit">購入した商品</button>
+                <button class="purchase-item__button" type="submit">購入した商品</button>
             </form>
         </div>
     </div>
