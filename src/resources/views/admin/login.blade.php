@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>caochtech-free-market</title>
+    <link rel="stylesheet" href="{{ asset('css/admin.login.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
 </head>
 <body>
@@ -18,7 +19,7 @@
     <main>
         <div class="login-form__content">
             <div class="login-form__heading">
-                <p>Adminのログイン</p>
+                <p>Adminログインフォーム</p>
             </div>
             <form class="login-form" action="{{ url('admin/login') }}" method="post">
                 @csrf

@@ -1,0 +1,24 @@
+.header {
+    background: #000;
+}
+  
+.header__inner {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 1230px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout-form__button {
+    padding: 5px 10px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
