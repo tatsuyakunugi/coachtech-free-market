@@ -86,10 +86,9 @@ Route::middleware('guest:admin')->group(function () {
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin', [AdminUserController::class, 'show']);
     Route::post('/admin/logout', [AdminLoginController::class, 'postAdminLogout']);
+    Route::get('/admin/user_list', [AdminUserController::class, 'getUserList']);
+    Route::get('/admin/user_detail/{user_id}', [AdminUserController::class, 'getUserDetail']);
 });
-
-Route::get('/admin/register', [AdminRegisterController::class, 'getAdminRegister']);
-Route::post('/admin/register', [AdminRegisterController::class, 'postAdminRegister']);
 
 Route::get('/image', [UploadController::class, 'image']);
 Route::post('/image_upload', [UploadController::class, 'store'])->name('image_upload');
