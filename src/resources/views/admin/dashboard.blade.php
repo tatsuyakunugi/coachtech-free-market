@@ -10,7 +10,7 @@
         <p>管理ページTOP</p>
     </div>
     <div class="link-form">
-        <a class="link-form__button" href="/admin/user_list">
+        <a class="link-form__button" href="{{ route('admin.showUserList') }}">
             ユーザー一覧
         </a>
     </div>

@@ -1,15 +1,21 @@
 @extends('layouts.admin')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/user_detail.css') }}">
+<link rel="stylesheet" href="{{ asset('css/comment_detail.css') }}">
 @endsection
 
 @section('content')
 <div class="detail-page__content">
     <div class="detail-page__heading">
         <a class="detail-page__link" href="/admin/user_list"><</a>
-        <p>{{ $user->profile->name }}さんのユーザー詳細</p>
+        <p>{{ $user->profile->name }}さんの投稿詳細</p>
     </div>
+    @if(is_null($comments))
+    <div class="message">
+        <p>投稿はありません</p>
+    </div>
+    @else
+    @foreach($comments as $comment)
     <div class="detail-card">
         <div class="detail-card__inner">
             <div class="detail-card__group">
@@ -17,41 +23,35 @@
                     <p>名前：</p>
                 </div>
                 <div class="detail-card__item">
-                    {{ $user->profile->name }}
+                    {{ $comment->user->profile->name }}
                 </div>
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>メール：</p>
+                    <p>投稿日：</p>
                 </div>
                 <div class="detail-card__item">
-                    {{ $user->email }}
+                    {{ $comment->created_at->format('Y-m-d H:i') }}
                 </div>
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>住所：</p>
+                    <p>投稿内容：</p>
                 </div>
                 <div class="detail-card__item">
-                    {{ $user->profile->address }}{{ $user->profile->building }}
-                </div>
-            </div>
-            <div class="detail-card__group">
-                <div class="detail-card__title">
-                    <p>登録日：</p>
-                </div>
-                <div class="detail-card__item">
-                    {{ $user->created_at->format('Y-m-d H:i') }}
+                    {{ $comment->comment }}
                 </div>
             </div>
             <div class="delete-form__button">
-                <form class="delete-form" action="{{ route('admin.userDestroy', $user->id) }}" method="post">
+                <form class="delete-form" action="{{ route('admin.commentDestroy' ,$comment->id) }}" method="post">
                     @method('DELETE')
                     @csrf
-                    <button class="delete-form__button-submit" type="submit">このユーザーを削除する</button>
+                    <button class="delete-form__button-submit" type="submit">この投稿を削除する</button>
                 </form>
             </div>
         </div>
-    </div>               
+    </div>
+    @endforeach
+    @endif               
 </div>
 @endsection

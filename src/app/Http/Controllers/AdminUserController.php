@@ -18,10 +18,4 @@ class AdminUserController extends Controller
         $users = User::all();
         return view('admin.user_list', compact('users'));
     }
-
-    public function getUserDetail($id)
-    {
-        $user = User::find($id);
-        return view('admin.user_detail', compact('user'));
-    }
 }

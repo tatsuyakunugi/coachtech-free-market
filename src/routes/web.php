@@ -11,9 +11,10 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\PurchaseController;
-use App\Http\Controllers\AdminRegisterController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminDeleteUserController;
+use App\Http\Controllers\AdminDeleteCommentController;
 use App\Http\Controllers\UploadController;
 
 /*
@@ -86,8 +87,17 @@ Route::middleware('guest:admin')->group(function () {
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin', [AdminUserController::class, 'show']);
     Route::post('/admin/logout', [AdminLoginController::class, 'postAdminLogout']);
-    Route::get('/admin/user_list', [AdminUserController::class, 'getUserList']);
-    Route::get('/admin/user_detail/{user_id}', [AdminUserController::class, 'getUserDetail']);
+    Route::get('/admin/user_list', [AdminUserController::class, 'getUserList'])->name('admin.showUserList');
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/user_detail/{user_id}', [AdminDeleteUserController::class, 'getUserDetail'])->name('admin.showUserDetail');
+    Route::delete('/admin/user_detail/{user_id}', [AdminDeleteUserController::class, 'destroy'])->name('admin.userDestroy');
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/comment_detail/{user_id}', [AdminDeleteCommentController::class, 'getCommentDetail'])->name('admin.showCommentDetail');
+    Route::delete('/admin/comment_detail/{comment_id}', [AdminDeleteCommentController::class, 'destroy'])->name('admin.commentDestroy');
 });
 
 Route::get('/image', [UploadController::class, 'image']);

@@ -6,6 +6,7 @@
   
 .top-page__heading {
     margin-bottom: 40px;
+    border-bottom: 3px solid #ddd;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
