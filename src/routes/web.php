@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminDeleteUserController;
 use App\Http\Controllers\AdminDeleteCommentController;
+use App\Http\Controllers\MailSendController;
 use App\Http\Controllers\UploadController;
 
 /*
@@ -98,6 +99,11 @@ Route::middleware('auth:admin')->group(function () {
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/comment_detail/{user_id}', [AdminDeleteCommentController::class, 'getCommentDetail'])->name('admin.showCommentDetail');
     Route::delete('/admin/comment_detail/{comment_id}', [AdminDeleteCommentController::class, 'destroy'])->name('admin.commentDestroy');
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/mail/mail', [MailSendController::class, 'mailCreate'])->name('admin.mailCreate');
+    Route::post('/admin/mail/complete', [MailSendController::class, 'send'])->name('admin.mailSend');
 });
 
 Route::get('/image', [UploadController::class, 'image']);
