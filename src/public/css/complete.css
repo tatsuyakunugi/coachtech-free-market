@@ -1,0 +1,32 @@
+.complete-page__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.complete-card {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+.complete-card__message {
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.link-form {
+    margin-top: 40px;
+}
+
+.top-page__link {
+    padding: 10px 20px;
+    width: 30%;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: #0000ff;
+    color: #fff;
+    cursor: pointer;
+}
