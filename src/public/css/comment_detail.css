@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.detail-page__link {
+.list-page__link {
     margin-right: 30px;
     padding: 2px 5px;
     border: 3px solid #0000ff;
@@ -49,10 +49,6 @@
 
 .detail-card__title {
     width: 30%;
-}
-
-.detail-card__item {
-    text-align: left;
 }
 
 .delete-form__button {
