@@ -56,6 +56,8 @@
 
 7. composer require livewire/livewire
 
+8.docker-compose.ymlにメールサーバコンテナを追記、.envを編集しdocker-compose build及びdocker-compose up -d
+
 ## その他
 
 ### テスト用ユーザー
