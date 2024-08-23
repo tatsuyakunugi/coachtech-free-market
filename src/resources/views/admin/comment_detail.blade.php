@@ -7,7 +7,7 @@
 @section('content')
 <div class="detail-page__content">
     <div class="detail-page__heading">
-        <a class="detail-page__link" href="/admin/user_list"><</a>
+        <a class="list-page__link" href="/admin/user_list"><</a>
         <p>{{ $user->profile->name }}さんの投稿詳細</p>
     </div>
     @if(is_null($comments))
