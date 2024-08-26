@@ -7,10 +7,30 @@
 @section('content')
 <div class="list-page__content">
     <div class="list-page__heading">
-        <a class="top-page__link" href="/admin"><</a>
-        <p>ユーザー一覧</p>
+        <div class="list-page__heading--item">
+            <a class="top-page__link" href="/admin">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+        </div>
+        <div class="list-page__heading--item">
+            <p>ユーザー一覧</p>
+        </div>
     </div>
     <div class="list-table">
+        <div class="list-table__alert">
+            @if (session('message'))
+            <div class="list-table__alert--success">{{ session('message') }}</div>
+            @endif 
+        </div>
+        <div class="list-table__heading">
+            <form class="search-form" action="{{ route('admin.showUserList') }}" method="get">
+                @csrf
+                <input type="text" name="keyword">
+                <button class="search-form__button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
         <table class="list-table__inner">
             <tbody>
                 <tr class="list-table__title-row">

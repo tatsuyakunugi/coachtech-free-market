@@ -13,9 +13,23 @@ class AdminUserController extends Controller
         return view('admin.dashboard');
     }
 
-    public function getUserList()
+    public function getUserList(Request $request)
     {
-        $users = User::all();
+        $keyword = $request->input('keyword');
+        $users = '';
+
+        if(!empty($keyword))
+        {
+            $users = User::whereHas('profile', function ($query) use ($keyword) {
+                $query->where('name', 'like', '%' . $keyword . '%');
+            })
+            ->orwhereHas('profile', function ($query) use ($keyword) {
+                $query->where('address', 'like', '%' . $keyword . '%');
+            })->get();
+        }else{
+            $users = User::all();
+        }
+
         return view('admin.user_list', compact('users'));
     }
 }

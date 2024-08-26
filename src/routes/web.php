@@ -86,8 +86,11 @@ Route::middleware('guest:admin')->group(function () {
 });
 
 Route::middleware('auth:admin')->group(function () {
-    Route::get('/admin', [AdminUserController::class, 'show']);
     Route::post('/admin/logout', [AdminLoginController::class, 'postAdminLogout']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin', [AdminUserController::class, 'show']);
     Route::get('/admin/user_list', [AdminUserController::class, 'getUserList'])->name('admin.showUserList');
 });
 
