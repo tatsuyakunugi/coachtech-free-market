@@ -7,7 +7,9 @@
 @section('content')
 <div class="detail-page__content">
     <div class="detail-page__heading">
-        <a class="detail-page__link" href="/admin/user_list"><</a>
+        <a class="detail-page__link" href="/admin/user_list">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <p>{{ $user->profile->name }}さんのユーザー詳細</p>
     </div>
     <div class="detail-card">
@@ -42,6 +44,14 @@
                 </div>
                 <div class="detail-card__item">
                     {{ $user->created_at->format('Y-m-d H:i') }}
+                </div>
+            </div>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p>更新日：</p>
+                </div>
+                <div class="detail-card__item">
+                    {{ $user->profile->updated_at->format('Y-m-d H:i') }}
                 </div>
             </div>
             <div class="delete-form__button">
