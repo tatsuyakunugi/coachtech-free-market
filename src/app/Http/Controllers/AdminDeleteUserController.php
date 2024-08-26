@@ -19,6 +19,6 @@ class AdminDeleteUserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect()->route('admin.showUserList');
+        return redirect()->route('admin.showUserList')->with('message', 'ユーザー情報を1件削除しました');
     }
 }
