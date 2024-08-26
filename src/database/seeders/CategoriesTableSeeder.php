@@ -166,7 +166,7 @@ class CategoriesTableSeeder extends Seeder
         ];
         DB::table('categories')->insert($param);
         $param = [
-            'name' => '家電・インテリア',
+            'name' => '家具・インテリア',
         ];
         DB::table('categories')->insert($param);
         $param = [
