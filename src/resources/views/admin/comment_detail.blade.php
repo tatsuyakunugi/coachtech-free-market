@@ -7,7 +7,9 @@
 @section('content')
 <div class="detail-page__content">
     <div class="detail-page__heading">
-        <a class="list-page__link" href="/admin/user_list"><</a>
+        <a class="list-page__link" href="/admin/user_list">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
         <p>{{ $user->profile->name }}さんの投稿詳細</p>
     </div>
     @if(is_null($comments))
@@ -24,6 +26,14 @@
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->user->profile->name }}
+                </div>
+            </div>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p>商品名：</p>
+                </div>
+                <div class="detail-card__item">
+                    {{ $comment->item->name }}
                 </div>
             </div>
             <div class="detail-card__group">
