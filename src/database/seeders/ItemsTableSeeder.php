@@ -39,7 +39,7 @@ class ItemsTableSeeder extends Seeder
         $param = [
             'user_id' => 2,
             'condition_id' => 2,
-            'image_path' => 'public/items/0kz6ExA8Yx1fCe8nTqgOj4XQf8MFT1Q0iHZNCOES.jpg',
+            'image_path' => 'public/items/DbYgO7PoVAsxnS9K7wjjypByAQ9rDXXbSY9bXVT0.webp',
             'name' => '簡易コンロ',
             'description' => '簡易コンロなります。使用回数は数回なので状態はいいと思います。',
             'price' => 3000,
