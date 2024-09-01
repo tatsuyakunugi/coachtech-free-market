@@ -18,6 +18,7 @@ class ItemController extends Controller
         if(!empty($keyword))
         {
             $dt->where('name', 'like', '%' . $keyword . '%')
+            ->orwhere('description', 'like', '%' . $keyword . '%')
             ->orwhereHas('condition', function ($query) use ($keyword) {
                 $query->where('condition', 'like', '%' . $keyword . '%');
             })
