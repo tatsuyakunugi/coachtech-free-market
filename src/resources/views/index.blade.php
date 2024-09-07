@@ -28,19 +28,31 @@
         @endif
     </div>
     <div class="main__content--body">
-        @if(!$items)
-        <div class="item__wrapper">
-            <p>お気に入り登録をした商品はありません</p>
-        </div>
-        @else
+        @if($items)
         <div class="item__wrapper">
             @foreach($items as $item)
+            @if(!$item->status)
             <div class="item-card">
                 <a class="item__link" href="/item/{{ $item->id }}">
                     <img src="{{ Storage::url($item->image_path) }}" alt="">
                 </a>
             </div>
+            @endif
             @endforeach
+        </div>
+        @elseif($likes)
+        <div class="item__wrapper">
+            @foreach($likes as $like)
+            <div class="item-card">
+                <a class="item__link" href="/item/{{ $like->item->id }}">
+                    <img src="{{ Storage::url($like->item->image_path) }}" alt="">
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @else
+        <div class="item__wrapper">
+            <p>該当する商品はありません</p>
         </div>
         @endif
     </div>
