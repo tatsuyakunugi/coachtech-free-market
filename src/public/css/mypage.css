@@ -70,7 +70,7 @@
     cursor: pointer;
 }
 
-.purchase-item__button {
+.sold-item__button {
     background-color: #fff;
     color: gray;
     border: none;
