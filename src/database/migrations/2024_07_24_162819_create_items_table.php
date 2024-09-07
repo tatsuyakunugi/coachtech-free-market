@@ -21,6 +21,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
+            $table->boolean('status')->default(0)->comment('0=販売中、1=販売終了');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
