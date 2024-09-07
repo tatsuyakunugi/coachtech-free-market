@@ -50,4 +50,17 @@ class SellController extends Controller
         
         return redirect('sell')->with('message', '出品手続きが完了しました');
     }
+
+    public function addStatus(Request $request, $id)
+    {
+        $user = Auth::user();
+        $item = Item::find($id);
+        $status = $request->input('status');
+
+        $item->update([
+            'status' => $status,
+        ]);
+
+        return redirect('/');
+    }
 }
