@@ -20,7 +20,7 @@
                     <p>￥{{ $item->price }}</p>
                 </div>
                 <div class="item__utilities">
-                    @if(Auth::check())
+                @if(Auth::check())
                     <div class="like-form__button">
                         @if(!Auth::user()->is_like($item->id))
                         <form class="like-form" action="{{ route('likes.store', $item) }}" method="post">
@@ -45,7 +45,6 @@
                         </div>
                         @endif
                     </div>
-                    @endif
                     <div class="coment__link-form--button">
                         <form class="comment__link-form" action="{{ route('comment.create', $item->id) }}" method="get">
                             @csrf
@@ -58,9 +57,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="purchase__link-form">
-                    <a class="purchase__link" href="/purchase/{{ $item->id }}">購入する</a>
-                </div>
+                    @if($sold_item)
+                    <div class="purchase__link-form">
+                        <p class="purchase__link">販売は終了しました</p>
+                    </div>
+                    @else
+                    <div class="purchase__link-form">
+                        <a class="purchase__link" href="/purchase/{{ $item->id }}">購入する</a>
+                    </div>
+                    @endif
+                @endif
                 <div class="item__explanation">
                     <h3>商品説明</h3>
                     <p>{{ $item->description }}</p>
