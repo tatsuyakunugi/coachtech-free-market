@@ -11,6 +11,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminDeleteUserController;
@@ -43,7 +44,8 @@ Route::post('/login', [LoginController::class, 'postLogin']);
 Route::post('/logout', [LoginController::class, 'postLogout']);
 
 Route::middleware('auth')->group(function () {
-    Route::get('/mypage', [UserController::class, 'mypage']);
+    Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage.index');
+    Route::get('/sold_items', [UserController::class, 'getSoldItems'])->name('sold.index');
 });
 
 Route::middleware('auth')->group(function () {  
@@ -55,6 +57,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/sell', [SellController::class, 'sell']);
     Route::post('/sell', [SellController::class, 'store'])->name('sell_item.store');
+    Route::post('/sell/{item_id}', [SellController::class, 'addStatus'])->name('sell_item.status');
 });
 
 
@@ -76,8 +79,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/purchase/{item_id}', [PurchaseController::class, 'purchase']);
-    Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'address']);
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'purchase'])->name('purchase.index');
+    Route::get('/purchase/address/{item_id}', [PurchaseController::class, 'create'])->name('shippingAddress.create');
+    Route::post('/purchase/address/{item_id}', [PurchaseController::class, 'store'])->name('shippingAddress.store');
+    Route::put('/purchase/address/{item_id}', [PurchaseController::class, 'update'])->name('shippingAddress.update');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/stripe/checkout/{item_id}', [StripeController::class, 'checkout'])->name('stripe.checkout');
+    Route::get('/stripe/success/{item_id}', [StripeController::class, 'success'])->name('stripe.success');
 });
 
 Route::middleware('guest:admin')->group(function () {

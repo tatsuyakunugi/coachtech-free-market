@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\SoldItem;
 use App\Models\Like;
 use App\Models\Comment;
 
@@ -28,21 +29,23 @@ class ItemController extends Controller
         }
 
         $items = $dt->get();
+        $likes = null;
 
-        return view('index', compact('items'));
+        return view('index', compact('items', 'likes'));
     }
 
     public function getMyList(Request $request)
     {
         $user = Auth::user();
-        $items = '';
+        $items = null;
+        $likes = '';
 
         if(Like::where('user_id', $user->id)->exists())
         {
-            $items = $user->like_items()->get();
+            $likes = Like::where('user_id', $user->id)->get();
         }
 
-        return view('index', compact('items'));
+        return view('index', compact('items', 'likes'));
     }
 
     public function item($id)
@@ -52,7 +55,14 @@ class ItemController extends Controller
         $comments = Comment::with(['user', 'replies', 'replies.user'])
             ->where('comments.item_id', $id)
             ->get();
+        $sold_item = '';
+        if(SoldItem::where('item_id', $id)->exists())
+        {
+            $sold_item = SoldItem::where('item_id', $id)->first();
+        }else{
+            $sold_item = null;
+        }
 
-        return view('item', compact('item', 'categories', 'comments'));
+        return view('item', compact('item', 'sold_item', 'categories', 'comments'));
     }
 }

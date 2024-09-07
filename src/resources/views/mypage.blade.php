@@ -29,22 +29,18 @@
             </div>
         </div>
         <div class="item__search-form">
-            <form class="sell-item__search" action="/mypage" method="get">
+            <form class="sell-item__search" action="{{ route('mypage.index') }}" method="get">
                 @csrf
                 <button class="sell-item__button" type="submit">出品した商品</button>
             </form>
-            <form class="purchase-item__search" action="" method="get">
+            <form class="sold-item__search" action="{{ route('sold.index') }}" method="get">
                 @csrf
-                <button class="purchase-item__button" type="submit">購入した商品</button>
+                <button class="sold-item__button" type="submit">購入した商品</button>
             </form>
         </div>
     </div>
     <div class="mypage__content--body">
-        @if(!$items)
-        <div class="item__wrapper">
-            <p>該当する商品はありません</p>
-        </div>
-        @else
+        @if($items)
         <div class="item__wrapper">
             @foreach($items as $item)
             <div class="item-card">
@@ -53,6 +49,20 @@
                 </a>
             </div>
             @endforeach
+        </div>
+        @elseif($sold_items)
+        <div class="item__wrapper">
+            @foreach($sold_items as $sold_item)
+            <div class="item-card">
+                <a class="item__link" href="/item/{{ $sold_item->item->id }}">
+                    <img src="{{ Storage::url($sold_item->item->image_path) }}" alt="">
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @else
+        <div class="item__wrapper">
+            <p>該当する商品はありません</p>
         </div>
         @endif
     </div>
