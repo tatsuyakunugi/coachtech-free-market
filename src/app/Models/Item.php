@@ -15,8 +15,9 @@ class Item extends Model
         'condition_id',
         'image_path',
         'name',
-        'price',
         'description',
+        'price',
+        'status',
     ];
 
     public function categories()
@@ -42,5 +43,10 @@ class Item extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function sold_items()
+    {
+        return $this->hasMany(SoldItem::class);
     }
 }
