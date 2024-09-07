@@ -46,6 +46,11 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    public function customer()
+    {
+        return $this->hasOne(Customer::class);
+    }
+
     public function items()
     {
         return $this->hasMany(Item::class);
@@ -74,5 +79,10 @@ class User extends Authenticatable
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    public function sold_items()
+    {
+        return $this->hasMany(SoldItem::class);
     }
 }
