@@ -3,6 +3,18 @@
     padding: 30px 15px;
     max-width: 1230px;
 }
+
+@media screen and (max-width: 768px) {
+    .top-page__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .top-page__content {
+        max-width: 480px;
+    }
+}
   
 .top-page__heading {
     margin-bottom: 40px;
@@ -14,19 +26,32 @@
 
 .top-page__body {
     display: flex;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .link-form {
     margin-top: 50px;
     width: 50%;
-    text-align: center;
     font-size: 18px;
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .link-form {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .link-form {
+        font-size: 12px;
+    }
+}
+
 .user-list__link,
 .mail-create__link {
-    width: 80%;
+    width: 100%;
 }
 
 .link-form__button {
