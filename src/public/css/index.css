@@ -5,6 +5,12 @@
     border-bottom: 3px solid #ddd;
 }
 
+@media screen and (max-width: 768px) {
+    .main__content--heading  {
+        justify-content: center;
+    }
+}
+
 .all-item__search {
     margin-right: 30px;
 }
@@ -18,6 +24,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 480px) {
+    .all-item__link  {
+        font-size: 14px;
+    }
+}
+
 .mylist__link {
     background-color: #fff;
     color: gray;
@@ -27,10 +39,28 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 480px) {
+    .mylist__link  {
+        font-size: 14px;
+    }
+}
+
 .main__content--body {
     max-width: 1230px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .main__content--body  {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main__content--body  {
+        max-width: 480px;
+    }
 }
 
 .item__wrapper {
@@ -44,6 +74,13 @@
     height: 250px;
     border: 1px solid #ddd;
     margin-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    .item-card  {
+        width: 140px;
+        height: 180px;
+    }
 }
 
 .item-card img {
