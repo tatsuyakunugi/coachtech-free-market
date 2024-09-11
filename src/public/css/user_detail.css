@@ -3,6 +3,18 @@
     padding: 30px 15px;
     max-width: 1230px;
 }
+
+@media screen and (max-width: 768px) {
+    .detail-page__content{
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .detail__content {
+        max-width: 480px;
+    }
+}
   
 .detail-page__heading {
     display: flex;
@@ -13,6 +25,12 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .detail-page__heading {
+        font-size: 20px;
+    }
 }
 
 .detail-page__link {
@@ -32,6 +50,12 @@
     border: 3px solid #808080;
     font-size: 18px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+    .detail-card {
+        width: 100%;
+    }
 }
 
 .detail-card__group {
