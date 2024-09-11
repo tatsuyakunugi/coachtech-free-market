@@ -9,10 +9,35 @@
     height: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+        text-align: center;
+    }
+}
+
 .login-form__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
+}
+
+@media screen and (max-width: 768px) {
+    .login-form__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-form__content {
+        max-width: 480px;
+    }
 }
   
 .login-form__heading {
@@ -21,10 +46,16 @@
     font-weight: bold;
     text-align: center;
 }
+
+@media screen and (max-width: 480px) {
+    .login-form__heading {
+        font-size: 20px;
+    }
+}
   
 .login-form {
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
     text-align: center;
 }
   
