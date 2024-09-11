@@ -1,15 +1,47 @@
+.purchase__alert--danger {
+    padding: 10px 30px;
+    border-color: #f5c2c7;
+    background-color: #f8d7da;
+    color: #842029;
+}
+
 .purchase__content {
     max-width: 1230px;
     margin: 30px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .purchase__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .purchase__content {
+        max-width: 480px;
+    }
 }
 
 .purchase__content--inner {
     display: flex;
 }
 
+@media screen and (max-width: 768px) {
+    .purchase__content--inner {
+        display: block;
+    }
+}
+
 .item-edit__body {
     width: 60%;
     padding: 20px 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .item-edit__body {
+        width: 100%;
+        padding: 10px 20px;
+    }
 }
 
 .item__info--item {
@@ -18,9 +50,16 @@
 
 .item__image {
     width: 200px;
-    height: 200px;
+    height: 250px;
     border: 1px solid #ddd;
     margin-right: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    .item__image  {
+        width: 140px;
+        height: 180px;
+    }
 }
 
 .item__image img {
@@ -33,6 +72,15 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .item-edit__body--item  {
+        margin-top: 30px;
+        padding: 10px 30px;
+        display: block;
+        justify-content: left;
+    }
 }
 
 .pay-edit__link-tag,
@@ -52,12 +100,25 @@
     padding: 20px 30px;
 }
 
+@media screen and (max-width: 768px) {
+    .purchase__body {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
+
 .purchase__form-card {
     width: 90%;
     margin-bottom: 30px;
     padding: 20px 30px;
     border: 3px solid #ddd;
     border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .purchase__form-card {
+        width: 100%;
+    }
 }
 
 .purchase__form-card--item {
@@ -75,4 +136,10 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .purchase-form__button-submit {
+        width: 100%;
+    }
 }
