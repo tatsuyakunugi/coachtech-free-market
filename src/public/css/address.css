@@ -12,10 +12,34 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+    }
+}
+
 .address__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
+}
+
+@media screen and (max-width: 768px) {
+    .address__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .address__content {
+        max-width: 480px;
+    }
 }
   
 .address__heading {
@@ -27,25 +51,43 @@
 
 .purchase-index__link {
     margin-right: 20px;
-    padding: 5px 10px;
+    padding: 3px 5px;
     border: 3px solid #808080;
     border-radius: 3px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #808080;
     text-decoration: none;
     cursor: pointer;
 }
 
+@media screen and (max-width: 480px) {
+    .purchase-index__link {
+        font-size: 14px;
+    }
+}
+
 .address__heading-title {
     font-size: 24px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+    .address__heading-title {
+        font-size: 20px;
+    }
 }
   
 .adderss-form {
     margin: 0 auto;
     width: 60%;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .adderss-form {
+        width: 80%;
+    }
 }
   
 .form__group {
