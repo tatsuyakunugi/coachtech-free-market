@@ -7,16 +7,53 @@
     padding: 10px;
     max-width: 1230px;
 }
+
+@media screen and (max-width: 768px) {
+    .header__inner  {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner  {
+        max-width: 480px;
+        text-align: center;
+    }
+}
   
 .header__logo {
     color: #fff;
     font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__logo {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo {
+        font-size: 18px;
+    }
 }
   
 .login-form__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
+}
+
+@media screen and (max-width: 768px) {
+    .login-form__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-form__content  {
+        max-width: 480px;
+    }
 }
   
 .login-form__heading {
@@ -30,6 +67,12 @@
     margin: 0 auto;
     width: 60%;
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .login-form  {
+        width: 80%;
+    }
 }
   
 .form__group {
