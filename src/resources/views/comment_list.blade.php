@@ -38,7 +38,11 @@
             <div class="comment-list__item">
                 <div class="comment-card">
                     <div class="comment-card__heading">
-                        <p>{{ $comment->user->profile->name }}</p>
+                        @if($comment->user->profile)
+                        <p>{{ $comment->user->profile->name }}さん</p>
+                        @else
+                        <p>ゲストさん</p>
+                        @endif
                     </div>
                     <div class="comment-card__body">
                         <p>{{ $comment->comment }}</p>
@@ -67,7 +71,11 @@
                 @foreach($comment->replies as $reply)
                 <div class="reply-card">
                     <div class="reply-card__heading">
-                        <p>{{ $reply->user->profile->name }}</p>
+                        @if($reply->user->profile)
+                        <p>{{ $reply->user->profile->name }}さん</p>
+                        @else
+                        <p>ゲストさん</p>
+                        @endif
                     </div>
                     <div class="reply-card__body">
                         <p>{{ $reply->reply }}</p>
