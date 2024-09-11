@@ -12,6 +12,37 @@
     justify-content: space-around;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo,
+    .header__item {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logout-form {
+        text-align: right;
+    }
+}
+
 .logout-form__button {
     padding: 5px 10px;
     font-weight: bold;

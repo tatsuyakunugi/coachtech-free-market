@@ -10,22 +10,53 @@
     margin: 30px auto;
 }
 
+@media screen and (max-width: 768px) {
+    .comment__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .comment__content {
+        max-width: 480px;
+    }
+}
+
 .redilect__button {
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 480px) {
+    .redilect__button {
+        text-align: left;
+    }
+}
+
+
 .item__link {
-    padding: 5px 10px;
+    padding: 3px 5px;
     background-color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     color: #808080;
     border: 3px solid #808080;
     border-radius: 3px;
     text-decoration: none;
 }
 
+@media screen and (max-width: 480px) {
+    .item__link {
+        font-size: 14px;
+    }
+}
+
 .comment__content--inner {
     display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .comment__content--inner {
+        display: block;
+    }
 }
 
 .item__image,
@@ -35,10 +66,33 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 480px)
+{
+    .item__image,
+    .comment__body {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .item__image-card {
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
     border: 1px solid #ddd;
+}
+
+@media screen and (max-width: 768px) {
+    .item__image-card {
+        width: 200px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .item__image-card {
+        width: 100%;
+        height: 450px;
+    }
 }
 
 .item__image-card img {
@@ -53,6 +107,12 @@
 .item__utilities {
     display: flex;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .item__utilities {
+        justify-content: right;
+    }
 }
 
 .like-form__button,
@@ -92,6 +152,20 @@
 
 .form__group-title {
     text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+    .user-info {
+        display: flex;
+        text-align: left;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .user-info__tag {
+        margin-right: 30px;
+    }
 }
 
 .form__input--comment textarea {

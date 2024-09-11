@@ -69,8 +69,12 @@
                     </div>
                 </div>
                 <div class="user-info">
-                    <div class="user-info__tag">名前</div>
+                    <div class="user-info__tag">投稿者名</div>
+                    @if($user->profile)
                     <p>{{ $user->profile->name }}</p>
+                    @else
+                    <p>ゲストさん</p>
+                    @endif
                 </div>
             </div>
             <form class="comment-form" action="{{ route('comment.store', $item->id) }}" method="post">

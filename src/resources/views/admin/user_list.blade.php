@@ -42,7 +42,11 @@
                 @foreach($users as $user)
                 <tr class="list-table__item-row">
                     <td class="list-table__item">{{ $user->id }}</td>
+                    @if($user->profile)
                     <td class="list-table__item">{{ $user->profile->name }}</td>
+                    @else
+                    <td class="list-table__item">ゲスト</td>
+                    @endif
                     <td class="list-table__item">
                         <a class="comment_detail__link" href="{{ route('admin.showCommentDetail', $user->id) }}">投稿一覧</a>
                     </td>

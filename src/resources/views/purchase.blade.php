@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+<div class="purchase__alert">
+    @if (session('error'))
+    <div class="purchase__alert--danger">{{ session('error') }}</div>
+    @endif 
+</div>
 <div class="purchase__content">
     <div class="purchase__content--inner">
         <div class="item-edit__body">
@@ -24,10 +29,14 @@
                     <p>〒{{ $customer->shipping_post_code }}</p>
                     <p>{{ $customer->shipping_address }}</p>
                     <p>{{ $customer->shipping_building }}</p>
-                    @else
+                    @elseif(!$customer && $profile)
                     <p>〒{{ $profile->post_code }}</p>
                     <p>{{ $profile->address }}</p>
                     <p>{{ $profile->building }}</p>
+                    @else
+                    <p></p>
+                    <p></p>
+                    <p></p>
                     @endif
                 </div>
                 <a class="address__link" href="/purchase/address/{{ $item->id }}">変更する</a>

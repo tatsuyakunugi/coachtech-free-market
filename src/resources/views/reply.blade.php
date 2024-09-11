@@ -29,8 +29,13 @@
             <div class="reply__content--inner">
                 <div class="comment-info">
                     <div class="comment-info__heading">
+                        @if($comment->user->profile)
                         <span>投稿者：</span>
                         <p>{{ $comment->user->profile->name }}さん</p>
+                        @else
+                        <span>投稿者：</span>
+                        <p>ゲストさん</p>
+                        @endif
                     </div>
                     <div class="comment-info__body">
                         <span>投稿内容：</span>

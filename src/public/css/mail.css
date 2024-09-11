@@ -3,6 +3,18 @@
     padding: 30px 15px;
     max-width: 1230px;
 }
+
+@media screen and (max-width: 768px) {
+    .mail-page__content{
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mail__content {
+        max-width: 480px;
+    }
+}
   
 .mail-page__heading {
     display: flex;
@@ -13,6 +25,12 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .mail-page__heading {
+        font-size: 20px;
+    }
 }
 
 .top-page__link {
@@ -29,6 +47,12 @@
     margin: 0 auto;
     width: 60%;
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .mail-form {
+        width: 80%;
+    }
 }
   
 .form__group {

@@ -10,10 +10,70 @@
     justify-content: space-around;
     align-items: center;
 }
-  
+
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+        display: block;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+        display: block;
+        text-align: center;
+    }
+}
+
+.header__utility {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .header__utility {
+        width: 100%;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__title {
+        margin-bottom: 20px;
+    }
+}
+
 .header__logo {
     color: #fff;
     font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__logo {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__logo {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__utility {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-form {
+        width: 100%;
+    }
 }
 
 .search-form input {
@@ -21,6 +81,12 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .search-form input {
+        width: 70%;
+    }
 }
 
 .search-form__button {
@@ -39,6 +105,23 @@
     font-size: 14px;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    .login-link,
+    .register-link,
+    .mypage-link,
+    .sell-form {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logout-form__button-submit,
+    .sell-form__button-submit {
+        font-size: 12px;
+    }
 }
 
 .logout-form__button-submit {

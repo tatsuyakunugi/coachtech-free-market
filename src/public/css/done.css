@@ -9,11 +9,35 @@
     height: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+    }
+}
+
 .done__content {
     margin: 30px auto;
     padding: 30px 15px;
     max-width: 1230px;
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .done__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .done__content{
+        max-width: 480px;
+    }
 }
 
 .message {

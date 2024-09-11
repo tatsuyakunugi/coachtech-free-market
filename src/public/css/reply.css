@@ -9,6 +9,19 @@
     height: 50px;
 }
 
+@media screen and (max-width: 768px) {
+    .header__inner {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__inner {
+        max-width: 480px;
+        text-align: center;
+    }
+}
+
 .reply__alert--success {
     padding: 10px 30px;
     border-color: #badbcc;
@@ -22,8 +35,26 @@
     max-width: 1230px;
 }
 
+@media screen and (max-width: 768px) {
+    .reply__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reply__content {
+        max-width: 480px;
+    }
+}
+
 .reply__content--inner {
     display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .reply__content--inner {
+        display: block;
+    }
 }
 
 .comment-info,
@@ -33,11 +64,27 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 480px)
+{
+    .comment-info,
+    .reply__body {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 .comment-info__heading,
 .comment-info__date {
     display: flex;
     text-align: left;
     align-items: center;
+}
+
+@media screen and (max-width: 480px)
+{
+    .comment-info__body {
+        text-align: left;
+    }
 }
 
 .comment__body--inner {
