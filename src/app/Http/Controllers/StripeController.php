@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Profile;
 use App\Models\Item;
 use App\Models\SoldItem;
 
@@ -12,7 +13,19 @@ class StripeController extends Controller
 {
     public function checkout($id)
     {
+        $user = Auth::user();
         $item = Item::find($id);
+        $profile = '';
+
+        if(Profile::where('user_id', $user->id)->exists())
+        {
+            $profile = Profile::where('user_id', $user->id)->first();
+        }
+
+        if(!$profile)
+        {
+            return redirect()->route('purchase.index', ['item_id' => $item->id])->with('error', 'プロフィール情報がありません。マイページからプロフィールを作成してください。');
+        }
 
         $line_item = [
             'price_data' => [

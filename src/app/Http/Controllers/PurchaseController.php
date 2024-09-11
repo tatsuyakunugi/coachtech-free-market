@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
 use App\Models\Profile;
 use App\Models\Customer;
-use App\Http\Requests\ShippingAddressRequest;
+use App\Http\Requests\CustomerRequest;
 
 class PurchaseController extends Controller
 {
@@ -46,7 +46,7 @@ class PurchaseController extends Controller
         return view('address', compact('profile', 'customer', 'item'));
     }
 
-    public function store(ShippingAddressRequest $request, $id)
+    public function store(CustomerRequest $request, $id)
     {
         $this->validate($request,[
             'shipping_post_code' => 'required|regex:/^[0-9]{3}-[0-9]{4}$/',
@@ -76,7 +76,7 @@ class PurchaseController extends Controller
         return redirect()->route('purchase.index', ['item_id' => $item_id]);
     }
 
-    public function update(ShippingAddressRequest $request, $id)
+    public function update(CustomerRequest $request, $id)
     {
         $this->validate($request,[
             'shipping_post_code' => 'required|regex:/^[0-9]{3}-[0-9]{4}$/',
