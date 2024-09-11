@@ -10,7 +10,11 @@
         <a class="list-page__link" href="/admin/user_list">
             <i class="fa-solid fa-chevron-left"></i>
         </a>
+        @if($user->profile)
         <p>{{ $user->profile->name }}さんの投稿詳細</p>
+        @else
+        <p>ゲストさんの投稿詳細</p>
+        @endif
     </div>
     @if(is_null($comments))
     <div class="message">
@@ -20,33 +24,39 @@
     @foreach($comments as $comment)
     <div class="detail-card">
         <div class="detail-card__inner">
-            <div class="detail-card__group">
-                <div class="detail-card__title">
+            <div class="detail-card__group-1">
+                <div class="detail-card__title-1">
                     <p>名前：</p>
                 </div>
+                @if($comment->user->profile)
                 <div class="detail-card__item">
                     {{ $comment->user->profile->name }}
                 </div>
+                @else
+                <div class="detail-card__item">
+                    無し
+                </div>
+                @endif
             </div>
-            <div class="detail-card__group">
-                <div class="detail-card__title">
+            <div class="detail-card__group-2">
+                <div class="detail-card__title-2">
                     <p>商品名：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->item->name }}
                 </div>
             </div>
-            <div class="detail-card__group">
-                <div class="detail-card__title">
+            <div class="detail-card__group-3">
+                <div class="detail-card__title-3">
                     <p>投稿日：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->created_at->format('Y-m-d H:i') }}
                 </div>
             </div>
-            <div class="detail-card__group">
-                <div class="detail-card__title">
-                    <p>投稿内容：</p>
+            <div class="detail-card__group-4">
+                <div class="detail-card__title-4">
+                    <p>投稿：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->comment }}
