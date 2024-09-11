@@ -4,10 +4,28 @@
     max-width: 1230px;
 }
 
+@media screen and (max-width: 768px) {
+.complete-page__content {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .complete-page__content {
+        max-width: 480px;
+    }
+}
+
 .complete-card {
     margin: 0 auto;
     width: 60%;
     text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .complete-card {
+        width: 80%;
+    }
 }
 
 .complete-card__message {
