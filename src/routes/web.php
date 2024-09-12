@@ -41,7 +41,9 @@ Route::post('/register', [RegisterController::class, 'postRegister']);
 
 Route::get('/login', [LoginController::class, 'getLogin']);
 Route::post('/login', [LoginController::class, 'postLogin']);
-Route::post('/logout', [LoginController::class, 'postLogout']);
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'postLogout']);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage.index');

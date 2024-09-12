@@ -7,6 +7,7 @@ use App\Models\Profile;
 use App\Models\Item;
 use App\Models\SoldItem;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\Paginator;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
         $items = '';
         if(Item::where('user_id', $user->id)->exists())
         {
-            $items = Item::where('user_id', $user->id)->get();
+            $items = Item::where('user_id', $user->id)->paginate(10);
         }else{
             $items = null;
         }
@@ -46,7 +47,7 @@ class UserController extends Controller
         $sold_items = '';
         if(SoldItem::where('user_id', $user->id)->exists())
         {
-            $sold_items = SoldItem::where('user_id', $user->id)->get();
+            $sold_items = SoldItem::where('user_id', $user->id)->paginate(10);
         }else{
             $sold_items = null;
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Pagination\Paginator;
 
 class AdminUserController extends Controller
 {
@@ -27,7 +28,7 @@ class AdminUserController extends Controller
                 $query->where('address', 'like', '%' . $keyword . '%');
             })->get();
         }else{
-            $users = User::all();
+            $users = User::paginate(10);
         }
 
         return view('admin.user_list', compact('users'));

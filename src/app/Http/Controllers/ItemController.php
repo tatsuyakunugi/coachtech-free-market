@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Models\SoldItem;
 use App\Models\Like;
 use App\Models\Comment;
+use Illuminate\Pagination\Paginator;
 
 class ItemController extends Controller
 {
@@ -28,7 +29,7 @@ class ItemController extends Controller
             })->get();
         }
 
-        $items = $dt->get();
+        $items = $dt->paginate(10);
         $likes = null;
 
         return view('index', compact('items', 'likes'));
@@ -42,7 +43,7 @@ class ItemController extends Controller
 
         if(Like::where('user_id', $user->id)->exists())
         {
-            $likes = Like::where('user_id', $user->id)->get();
+            $likes = Like::where('user_id', $user->id)->paginate(10);
         }
 
         return view('index', compact('items', 'likes'));

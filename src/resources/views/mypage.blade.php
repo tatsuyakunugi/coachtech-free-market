@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @endsection
 
 @section('content')
@@ -50,6 +51,9 @@
             </div>
             @endforeach
         </div>
+        <div class="pagination">
+            {{ $items->links() }}
+        </div>
         @elseif($sold_items)
         <div class="item__wrapper">
             @foreach($sold_items as $sold_item)
@@ -59,6 +63,9 @@
                 </a>
             </div>
             @endforeach
+        </div>
+        <div class="pagination">
+            {{ $sold_items->links() }}
         </div>
         @else
         <div class="item__wrapper">

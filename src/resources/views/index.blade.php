@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @endsection
 
 @section('content')
@@ -40,6 +41,9 @@
             @endif
             @endforeach
         </div>
+        <div class="pagination">
+            {{ $items->links() }}
+        </div>
         @elseif($likes)
         <div class="item__wrapper">
             @foreach($likes as $like)
@@ -49,6 +53,9 @@
                 </a>
             </div>
             @endforeach
+        </div>
+        <div class="pagination">
+            {{ $likes->links() }}
         </div>
         @else
         <div class="item__wrapper">
