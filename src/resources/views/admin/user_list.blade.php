@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/user_list.css') }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @endsection
 
 @section('content')
@@ -56,7 +57,10 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>  
+        </table>
+        <div class="pagination">
+            {{ $users->links() }}
+        </div> 
     </div>                
 </div>
 @endsection
