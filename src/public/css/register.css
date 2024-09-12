@@ -50,6 +50,12 @@
     font-weight: bold;
     text-align: center;
 }
+
+@media screen and (max-width: 480px) {
+    .register-form__heading  {
+        font-size: 20pxs;
+    }
+}
   
 .register-form {
     margin: 0 auto;
