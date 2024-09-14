@@ -144,19 +144,19 @@
 
    docker-compose up及びdocker-compose up -d
 
-6．php artisan storage:link
+6.php artisan storage:link
 
-7. composer require livewire/livewire
+7.composer require livewire/livewire
 
-8. docker-compose.ymlにメールサーバコンテナを追記、.envを編集しdocker-compose build及びdocker-compose up -d
+8.docker-compose.ymlにメールサーバコンテナを追記、.envを編集しdocker-compose build及びdocker-compose up -d
 
-9. stripeにアカウントを作成、公開キーとシークレットキーを.envに追記してcomposer require stripe/stripe-php
+9.stripeにアカウントを作成、公開キーとシークレットキーを.envに追記してcomposer require stripe/stripe-php
 
-10. php artisan vendor:publish --tag=laravel-pagination
+10.php artisan vendor:publish --tag=laravel-pagination
 
-11. php artisan migrate
+11.php artisan migrate
 
-12. php artisan db:seed
+12.php artisan db:seed
 
 ## その他
 
