@@ -13,7 +13,11 @@
 
 ## アプリケーションURL
 
+今回はデプロイをしていないのでアプリケーションURLはありません。
+
 ## 他のリポジトリ
+
+ありません。
 
 ## 機能一覧
 
@@ -69,7 +73,7 @@
 
 ・ユーザー検索機能
 
-・指定したユーザー情報削除機能
+・指定したユーザーの削除機能
 
 ・ユーザーのコメント詳細取得機能
 
@@ -144,15 +148,15 @@
 
 7. composer require livewire/livewire
 
-8.docker-compose.ymlにメールサーバコンテナを追記、.envを編集しdocker-compose build及びdocker-compose up -d
+8. docker-compose.ymlにメールサーバコンテナを追記、.envを編集しdocker-compose build及びdocker-compose up -d
 
-9.composer require stripe/stripe-php
+9. stripeにアカウントを作成、公開キーとシークレットキーを.envに追記してcomposer require stripe/stripe-php
 
-10.php artisan vendor:publish --tag=laravel-pagination
+10. php artisan vendor:publish --tag=laravel-pagination
 
-11.php artisan migrate
+11. php artisan migrate
 
-12.php artisan db:seed
+12. php artisan db:seed
 
 ## その他
 
@@ -163,6 +167,8 @@
 ・メールアドレス：test@example.co.jp
 
 ・パスワード：testpass
+
+・決済時のカードはカード番号：4242424242424242　セキュリティーコード：000　日付：01/30を利用してください。
 
 ### 管理者
 
