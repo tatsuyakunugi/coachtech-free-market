@@ -21,11 +21,24 @@
     border: solid 1px #dee2e6;
 }
 
+@media screen and (max-width: 768px) {
+    .page-item {
+        width: 30px;
+        height: 30px;
+    }
+}
+
 .page-link {
     font-size: 14px;
     font-weight: bold;
     list-style: none;
     text-decoration: none;    
+}
+
+@media screen and (max-width: 768px) {
+    .page-link {
+        font-size: 12px;
+    }
 }
 
 .page-item.active {
