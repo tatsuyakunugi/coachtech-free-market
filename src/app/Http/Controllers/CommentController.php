@@ -42,10 +42,10 @@ class CommentController extends Controller
         return redirect()->route('comment.create', ['item_id' => $item_id])->with('message', 'コメントを投稿しました');
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy($id)
     {
-        $comment = Comment::find($request->comment_id);
-        $item = Item::find($id);
+        $comment = Comment::find($id);
+        $item = Item::find($comment->item->id);
         $item_id = $item->id;
         $comment->delete();
 
@@ -55,6 +55,7 @@ class CommentController extends Controller
     public function show($id)
     {
         $user = Auth::user();
+        $item = Item::find($id);
         $comments = '';
 
         if(Comment::where('item_id', $id)->exists())
@@ -64,6 +65,6 @@ class CommentController extends Controller
             ->get();
         }
 
-        return view('comment_list', compact('user', 'comments'));
+        return view('comment_list', compact('user', 'item', 'comments'));
     }
 }
