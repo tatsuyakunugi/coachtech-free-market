@@ -34,7 +34,7 @@
             @foreach($items as $item)
             @if(!$item->status)
             <div class="item-card">
-                <a class="item__link" href="/item/{{ $item->id }}">
+                <a class="item__link" href="{{ route('item.detail', $item->id) }}">
                     <img src="{{ Storage::url($item->image_path) }}" alt="">
                 </a>
             </div>
@@ -48,7 +48,7 @@
         <div class="item__wrapper">
             @foreach($likes as $like)
             <div class="item-card">
-                <a class="item__link" href="/item/{{ $like->item->id }}">
+                <a class="item__link" href="{{ route('item.detail', $like->item->id) }}">
                     <img src="{{ Storage::url($like->item->image_path) }}" alt="">
                 </a>
             </div>
