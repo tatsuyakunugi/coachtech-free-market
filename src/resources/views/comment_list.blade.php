@@ -52,14 +52,13 @@
                     </div>
                     @if(($comment->user->id) == ($user->id))
                     <div class="delete-form">
-                        <form class="delete-form__button" action="{{ route('comment.destroy', $comment->item->id) }}" method="post">
+                        <form class="delete-form__button" action="{{ route('comment.destroy', $comment->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <input type="hidden" name="comment_id" value="{{ $comment->id }}">
                             <button class="delete-form__button-submit" type="submit">コメントを削除する</button>
                         </form>
                     </div>
-                    @else(($comment->item->user_id) == ($user->id))
+                    @elseif(($item->user_id) == ($user->id))
                     <div class="reply-form">
                         <form class="reply-form__button" action="{{ route('reply.create', $comment->id) }}" method="get">
                             @csrf
