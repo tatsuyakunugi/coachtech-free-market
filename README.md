@@ -129,6 +129,8 @@
 
 ## ER図
 
+<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" value="" style="fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;rounded=0;" edge="1" parent="1"><mxGeometry width="100" height="100" relative="1" as="geometry"><mxPoint x="680" y="499" as="sourcePoint"/><mxPoint x="540" y="499" as="targetPoint"/><Array as="points"><mxPoint x="620" y="499"/></Array></mxGeometry></mxCell></root></mxGraphModel>
+
 ### Dockerビルド
 
 1．git clone git@github.com:coachtech-material/laravel-docker-template.git
