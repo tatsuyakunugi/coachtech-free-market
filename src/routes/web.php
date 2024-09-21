@@ -17,7 +17,6 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminDeleteUserController;
 use App\Http\Controllers\AdminDeleteCommentController;
 use App\Http\Controllers\MailSendController;
-use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +30,7 @@ use App\Http\Controllers\UploadController;
 */
 
 Route::get('/', [ItemController::class, 'index'])->name('item.index');
-Route::get('/item/{item_id}', [ItemController::class, 'item']);
+Route::get('/item/{item_id}', [ItemController::class, 'item'])->name('item.detail');
 Route::middleware('auth')->group(function () {
     Route::get('/mylist', [ItemController::class, 'getMyList'])->name('mylist.index');
 });
@@ -71,7 +70,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/comment/{item_id}', [CommentController::class, 'comment'])->name('comment.create');
     Route::post('/comment/{item_id}', [CommentController::class, 'store'])->name('comment.store');
-    Route::delete('/comment/{item_id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+    Route::delete('/comment/{comment_id}', [CommentController::class, 'destroy'])->name('comment.destroy');
     Route::get('/comment_list/{item_id}', [CommentController::class, 'show'])->name('comment.show');
 });
 
@@ -120,6 +119,3 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/mail/mail', [MailSendController::class, 'mailCreate'])->name('admin.mailCreate');
     Route::post('/admin/mail/complete', [MailSendController::class, 'send'])->name('admin.mailSend');
 });
-
-Route::get('/image', [UploadController::class, 'image']);
-Route::post('/image_upload', [UploadController::class, 'store'])->name('image_upload');
