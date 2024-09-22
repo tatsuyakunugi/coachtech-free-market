@@ -15,7 +15,7 @@ class ReplyController extends Controller
         $user = Auth::user();
         $comment = Comment::find($id);
 
-        return view('reply', compact('user', 'comment'));
+        return view('reply', compact('comment'));
     }
 
     public function store(ReplyRequest $request, $id)
