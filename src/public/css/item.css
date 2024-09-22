@@ -88,7 +88,7 @@
 
 .like-form__button-submit,
 .unlike-form__button-submit,
-.coment__link-form--button-submit {
+.comment__link-form--button-submit {
     background-color: #fff;
     font-size: 18px;
     border: none;
@@ -117,6 +117,15 @@
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+}
+
+.sold-item__info,
+.sell-item__info {
+    color: #fff;
+}
+
+.item__description {
+    text-align: left;
 }
 
 .category-info {
