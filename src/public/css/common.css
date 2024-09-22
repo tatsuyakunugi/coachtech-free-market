@@ -41,32 +41,15 @@
     }
 }
 
-@media screen and (max-width: 768px) {
-    .header__title {
-        margin-bottom: 20px;
-    }
-}
-
-.header__logo {
-    color: #fff;
-    font-size: 24px;
-}
-
-@media screen and (max-width: 768px) {
-    .header__logo {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .header__logo {
-        font-size: 16px;
-    }
-}
-
 @media screen and (max-width: 480px) {
     .header__utility {
         margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__title {
+        margin-bottom: 20px;
     }
 }
 
