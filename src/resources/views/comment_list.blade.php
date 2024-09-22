@@ -25,6 +25,55 @@
             <div class="comment-list__alert--success">{{ session('message') }}</div>
             @endif 
         </div>
+        @if(!$user)
+        <div class="comment-list__content">
+            @if(empty($comments))
+            <div class="message">
+                <p>コメントはありません</p>
+            </div>
+            @else
+            <div class="message">
+                <p>コメント一覧</p>
+            </div>
+            @foreach($comments as $comment)
+            <div class="comment-list__item">
+                <div class="comment-card">
+                    <div class="comment-card__heading">
+                        @if($comment->user->profile)
+                        <p>{{ $comment->user->profile->name }}さん</p>
+                        @else
+                        <p>ゲストさん</p>
+                        @endif
+                    </div>
+                    <div class="comment-card__body">
+                        <p>{{ $comment->comment }}</p>
+                    </div>
+                    <div class="comment-card__date">
+                        <p>{{ $comment->created_at }}</p>
+                    </div>
+                </div>
+                @foreach($comment->replies as $reply)
+                <div class="reply-card">
+                    <div class="reply-card__heading">
+                        @if($reply->user->profile)
+                        <p>{{ $reply->user->profile->name }}さん</p>
+                        @else
+                        <p>ゲストさん</p>
+                        @endif
+                    </div>
+                    <div class="reply-card__body">
+                        <p>{{ $reply->reply }}</p>
+                    </div>
+                    <div class="reply-card__date">
+                        <p>{{ $reply->created_at }}</p>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            @endforeach
+            @endif
+        </div>
+        @else
         <div class="comment-list__content">
             @if(empty($comments))
             <div class="message">
@@ -88,6 +137,7 @@
             @endforeach
             @endif
         </div>
+        @endif
     </main>
 </body>
 </html>
