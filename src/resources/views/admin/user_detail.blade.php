@@ -20,7 +20,7 @@
         <div class="detail-card__inner">
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>名前：</p>
+                    <p class="detail-card__tag">名前：</p>
                 </div>
                 @if($user->profile)
                 <div class="detail-card__item">
@@ -34,7 +34,7 @@
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>メール：</p>
+                    <p class="detail-card__tag">メール：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $user->email }}
@@ -42,7 +42,7 @@
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>住所：</p>
+                    <p class="detail-card__tag">住所：</p>
                 </div>
                 @if($user->profile)
                 <div class="detail-card__item">
@@ -56,7 +56,7 @@
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>登録日：</p>
+                    <p class="detail-card__tag">登録日：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $user->created_at->format('Y-m-d H:i') }}
@@ -64,7 +64,7 @@
             </div>
             <div class="detail-card__group">
                 <div class="detail-card__title">
-                    <p>更新日：</p>
+                    <p class="detail-card__tag">更新日：</p>
                 </div>
                 @if($user->profile)
                 <div class="detail-card__item">
