@@ -26,7 +26,7 @@ class ItemController extends Controller
             })
             ->orwhereHas('categories', function ($query) use ($keyword) {
                 $query->where('name', 'like', '%' . $keyword . '%');
-            })->get();
+            })->paginate(10);
         }
 
         $items = $dt->paginate(10);
@@ -51,6 +51,7 @@ class ItemController extends Controller
 
     public function item($id)
     {
+        $user = Auth::user();
         $item = Item::withCount('likes')->find($id);
         $categories = $item->categories;
         $comments = Comment::with(['user', 'replies', 'replies.user'])
@@ -64,6 +65,6 @@ class ItemController extends Controller
             $sold_item = null;
         }
 
-        return view('item', compact('item', 'sold_item', 'categories', 'comments'));
+        return view('item', compact('user', 'item', 'sold_item', 'categories', 'comments'));
     }
 }
