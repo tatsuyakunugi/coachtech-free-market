@@ -24,9 +24,9 @@
     @foreach($comments as $comment)
     <div class="detail-card">
         <div class="detail-card__inner">
-            <div class="detail-card__group-1">
-                <div class="detail-card__title-1">
-                    <p>名前：</p>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p class="detail-card__tag">名前：</p>
                 </div>
                 @if($comment->user->profile)
                 <div class="detail-card__item">
@@ -38,25 +38,25 @@
                 </div>
                 @endif
             </div>
-            <div class="detail-card__group-2">
-                <div class="detail-card__title-2">
-                    <p>商品名：</p>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p class="detail-card__tag">商品名：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->item->name }}
                 </div>
             </div>
-            <div class="detail-card__group-3">
-                <div class="detail-card__title-3">
-                    <p>投稿日：</p>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p class="detail-card__tag">投稿日：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->created_at->format('Y-m-d H:i') }}
                 </div>
             </div>
-            <div class="detail-card__group-4">
-                <div class="detail-card__title-4">
-                    <p>投稿：</p>
+            <div class="detail-card__group">
+                <div class="detail-card__title">
+                    <p class="detail-card__tag">投稿：</p>
                 </div>
                 <div class="detail-card__item">
                     {{ $comment->comment }}
