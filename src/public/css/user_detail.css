@@ -69,6 +69,10 @@
     width: 30%;
 }
 
+.detail-card__tag {
+    width: 100%;
+}
+
 .detail-card__item {
     text-align: left;
 }

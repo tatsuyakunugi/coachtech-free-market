@@ -46,7 +46,7 @@
 .detail-card {
     width: 70%;
     padding: 20px 30px;
-    margin: 0 auto;
+    margin: 30px auto;
     border: 3px solid #808080;
     font-size: 18px;
     font-weight: bold;
@@ -58,27 +58,19 @@
     }
 }
 
-.detail-card__group-1,
-.detail-card__group-2,
-.detail-card__group-3 {
+.detail-card__group {
     display: flex;
     justify-content: left;
     align-items: center;
     width: 100%;
 }
 
-.detail-card__group-4 {
-    display: block;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
+.detail-card__title {
+    width: 30%;
 }
 
-.detail-card__title-1,
-.detail-card__title-2,
-.detail-card__title-3,
-.detail-card__title-4 {
-    width: 30%;
+.detail-card__tag {
+    width: 100%;
 }
 
 .delete-form__button {

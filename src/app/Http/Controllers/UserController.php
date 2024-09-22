@@ -30,7 +30,7 @@ class UserController extends Controller
         }
         $sold_items = null;
 
-        return view('mypage', compact('user', 'profile', 'items', 'sold_items'));
+        return view('mypage', compact('profile', 'items', 'sold_items'));
     }
 
     public function getSoldItems(Request $request)
@@ -52,6 +52,6 @@ class UserController extends Controller
             $sold_items = null;
         }
 
-        return view('mypage', compact('user', 'profile', 'items', 'sold_items'));
+        return view('mypage', compact('profile', 'items', 'sold_items'));
     }
 }

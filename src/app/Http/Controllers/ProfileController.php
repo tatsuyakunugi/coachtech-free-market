@@ -19,7 +19,7 @@ class ProfileController extends Controller
             $profile = null;
         }
 
-        return view('profile', compact('user', 'profile'));
+        return view('profile', compact('profile'));
     }
     
     public function store(ProfileRequest $request)

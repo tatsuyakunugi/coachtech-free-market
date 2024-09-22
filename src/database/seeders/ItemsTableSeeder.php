@@ -207,7 +207,7 @@ class ItemsTableSeeder extends Seeder
             'image_path' => 'public/items/xjpcbjV3ldhiC0mqsWEE7N9EjrfXEXZfRQRmWumq.jpg',
             'name' => 'カメラ',
             'description' => '使用回数は少なく状態は良好です。',
-            'price' => 5000,
+            'price' => 30000,
             'created_at' => now(),
             'updated_at' => now()
         ];
@@ -217,7 +217,7 @@ class ItemsTableSeeder extends Seeder
             'condition_id' => 3,
             'image_path' => 'public/items/16WefBPoiwmwnoVofIDoNoTd00YIoStMU5bLosfJ.jpg',
             'name' => '電動ドリル',
-            'description' => '古い型ですがメンテナンス見してあるので使用に問題ありません。DIY好きな方にお譲りします。',
+            'description' => '古い型ですがメンテナンスしてあるので使用に問題ありません。DIY好きな方にお譲りします。',
             'price' => 13000,
             'created_at' => now(),
             'updated_at' => now()

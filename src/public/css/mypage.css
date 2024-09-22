@@ -125,7 +125,7 @@
 
 @media screen and (max-width: 480px) {
     .sell-item__button  {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -140,7 +140,7 @@
 
 @media screen and (max-width: 480px) {
     .sold-item__button  {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
